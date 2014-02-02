@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+$body-bg: #ffffff;
+$font-family-sans-serif: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$navbar-default-bg: #ffffff;
+$brand-primary: #e74c3c;
+
+@import 'bootstrap';
+
+.center {
+	text-align: center;
+}
+
+
+/* Sticky footer styles */
+
+html, body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by it's height */
+  margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+  height: 60px;
+}
+#footer {
+  background-color: #e1e1e1;
+  color: #5a5a5a;
+  font-size: 10px;
+  line-height: 30px;
+}
+
+#footer a {
+    color: #5a5a5a;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+  #footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
