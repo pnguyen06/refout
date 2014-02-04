@@ -1,0 +1,29 @@
+<%= form_for(@headhunter) do |f| %>
+  <% if @headhunter.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@headhunter.errors.count, "error") %> prohibited this headhunter from being saved:</h2>
+
+      <ul>
+      <% @headhunter.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :CompanyName %>
+    <%= f.text_field :CompanyName, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :CompanyDescription %>
+    <%= f.text_field :CompanyDescription, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :CompanyEmail %>
+    <%= f.text_field :CompanyEmail, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<div class="container">
+	<p id="notice"><%= notice %></p>
+
+	<p>
+	  <strong>Company Name:</strong>
+	  <%= @headhunter.CompanyName %>
+	</p>
+
+	<p>
+	  <strong>Company Description:</strong>
+	  <%= @headhunter.CompanyDescription %>
+	</p>
+
+	<p>
+	  <strong>Company Email:</strong>
+	  <%= @headhunter.CompanyEmail %>
+	</p>
+
+	<%= link_to 'Edit', edit_headhunter_path(@headhunter) %> |
+	<%= link_to 'Back', headhunters_path %>
+</div>

@@ -1,0 +1,33 @@
+<div class="container">
+  <h1>Listing headhunters</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Company Name</th>
+        <th>Company Description</th>
+        <th>Company Email</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @headhunters.each do |headhunter| %>
+        <tr>
+          <td><%= headhunter.CompanyName %></td>
+          <td><%= headhunter.CompanyDescription %></td>
+          <td><%= headhunter.CompanyEmail %></td>
+          <td><%= link_to 'Show', headhunter %></td>
+          <td><%= link_to 'Edit', edit_headhunter_path(headhunter) %></td>
+          <td><%= link_to 'Destroy', headhunter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Headhunter', new_headhunter_path %>
+</div>

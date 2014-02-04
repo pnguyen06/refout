@@ -1,4 +1,6 @@
 Refout::Application.routes.draw do
+  resources :headhunters
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
