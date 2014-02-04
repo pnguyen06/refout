@@ -1,4 +1,5 @@
 Refout::Application.routes.draw do
+  devise_for :admins
   resources :headhunters
 
   devise_for :users
