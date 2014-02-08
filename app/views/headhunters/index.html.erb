@@ -31,5 +31,7 @@
 
   <br>
 
-  <%= link_to 'New Headhunter', new_headhunter_path %>
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'New Headhunter', new_headhunter_path %>
+  <% end %>
 </div>

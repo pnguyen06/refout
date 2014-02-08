@@ -16,6 +16,8 @@
 	  <%= @headhunter.CompanyEmail %>
 	</p>
 
-	<%= link_to 'Edit', edit_headhunter_path(@headhunter) %> |
+	<% if current_user.try(:admin?) %>
+		<%= link_to 'Edit', edit_headhunter_path(@headhunter) %>
+	<% end %>
 	<%= link_to 'Back', headhunters_path %>
 </div>
