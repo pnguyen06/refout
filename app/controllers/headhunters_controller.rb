@@ -1,5 +1,7 @@
 class HeadhuntersController < ApplicationController
   before_action :set_headhunter, only: [:show, :edit, :update, :destroy]
+  # before_action :authenticate_user!, only: [:new]
+  before_filter :verify_is_admin, only: [:new, :edit, :update, :destroy]
 
   def index
     @headhunters = Headhunter.all
@@ -47,5 +49,9 @@ class HeadhuntersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def headhunter_params
       params.require(:headhunter).permit(:CompanyName, :CompanyDescription, :CompanyEmail)
+    end
+
+    def verify_is_admin
+      (current_user.nil?) ? redirect_to(root_path) : (redirect_to(root_path) unless current_user.admin?)
     end
 end

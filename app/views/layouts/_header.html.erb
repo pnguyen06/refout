@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
         <li><a href="#">Banks</a></li>
         <li><a href="#">Funds</a></li>
-        <li><a href='#'>Headhunters</a></li>
+        <li><%= link_to "Headhunters", headhunters_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
