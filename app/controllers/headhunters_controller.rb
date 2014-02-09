@@ -4,7 +4,7 @@ class HeadhuntersController < ApplicationController
   before_filter :verify_is_admin, only: [:new, :edit, :update, :destroy]
 
   def index
-    @headhunters = Headhunter.all
+    @headhunters = Headhunter.all.order("created_at DESC")
   end
 
   def show
