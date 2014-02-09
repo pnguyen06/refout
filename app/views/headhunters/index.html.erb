@@ -2,23 +2,31 @@
   <div id="headhunters" class="transitions-enabled">
     <% @headhunters.each do |headhunter| %>
       <div class="box panel panel-default">
-        <%= image_tag headhunter.image.url(:medium) %>
+        <%= link_to image_tag(headhunter.image.url(:medium)), headhunter %>
         <div class="panel-body">
-          <%= headhunter.CompanyName %>
-          <%= headhunter.CompanyDescription %>
-          <%= headhunter.CompanyEmail %>
-          <%= link_to 'Show', headhunter %>
+          <p><strong><%= headhunter.CompanyName %></strong></p>
+          <p><%= headhunter.CompanyDescription %></p>
+          <p><%= headhunter.CompanyEmail %></p>
           <% if current_user.try(:admin?) %>
-            <%= link_to 'Edit', edit_headhunter_path(headhunter) %>
-            <%= link_to 'Destroy', headhunter, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="actions">
+              <%= link_to edit_headhunter_path(headhunter) do %>
+                <span class="glyphicon glyphicon-edit"></span>
+                Edit
+              <% end %>
+              <%= link_to headhunter, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <span class="glyphicon glyphicon-trash"></span>
+                Delete
+              <% end %>
+            </div>
           <% end %>
         </div>
       </div>
     <% end %>
-    
+    <!--
     <br />
     <% if current_user.try(:admin?) %>
       <%= link_to 'New Headhunter', new_headhunter_path %>
     <% end %>
+  -->
   </div>
 </div>

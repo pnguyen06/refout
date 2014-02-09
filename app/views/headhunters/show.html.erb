@@ -1,24 +1,33 @@
 <div class="container">
-
-	<%= image_tag @headhunter.image.url(:medium) %>
-
-	<p>
-	  <strong>Company Name:</strong>
-	  <%= @headhunter.CompanyName %>
-	</p>
-
-	<p>
-	  <strong>Company Description:</strong>
-	  <%= @headhunter.CompanyDescription %>
-	</p>
-
-	<p>
-	  <strong>Company Email:</strong>
-	  <%= @headhunter.CompanyEmail %>
-	</p>
-
-	<% if current_user.try(:admin?) %>
-		<%= link_to 'Edit', edit_headhunter_path(@headhunter) %>
-	<% end %>
 	<%= link_to 'Back', headhunters_path %>
+
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8">
+			<div class="panel panel-default">
+				<div class="panel-heading center">
+					<%= image_tag @headhunter.image.url(:medium) %>
+				</div>
+				<div class="panel-body">
+					<p>
+					  <%= @headhunter.CompanyName %>
+					</p>
+
+					<p>
+					  <%= @headhunter.CompanyDescription %>
+					</p>
+
+					<p>
+					  <%= @headhunter.CompanyEmail %>
+					</p>
+
+					<% if current_user.try(:admin?) %>
+						<%= link_to edit_headhunter_path(@headhunter) do %>
+							<span class="glyphicon glyphicon-edit"></span>
+							Edit
+						<% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
