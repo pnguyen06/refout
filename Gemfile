@@ -12,6 +12,7 @@ gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.2.2'
 gem 'paperclip', '~> 3.0'
+gem 'aws-sdk', '~> 1.33.0'
 
 group :development, :test do
 	gem 'sqlite3' # Use sqlite3 as the database for Active Record
