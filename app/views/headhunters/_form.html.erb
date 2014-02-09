@@ -1,4 +1,4 @@
-<%= form_for(@headhunter) do |f| %>
+<%= form_for @headhunter, html: { multipart: true } do |f| %>
   <% if @headhunter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@headhunter.errors.count, "error") %> prohibited this headhunter from being saved:</h2>
@@ -22,6 +22,10 @@
   <div class="form-group">
     <%= f.label :CompanyEmail %>
     <%= f.text_field :CompanyEmail, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
