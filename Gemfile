@@ -8,11 +8,13 @@ gem 'coffee-rails', '~> 4.0.0' # Use CoffeeScript for .js.coffee assets and view
 # gem 'therubyracer', platforms: :ruby # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'jquery-rails' # Use jquery as the JavaScript library
 gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.2.2'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.33.0'
+gem 'masonry-rails', '~> 0.2.1'
 
 group :development, :test do
 	gem 'sqlite3' # Use sqlite3 as the database for Active Record

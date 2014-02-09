@@ -1,39 +1,24 @@
 <div class="container">
-  <h1>Listing headhunters</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Image</th>
-        <th>Company Name</th>
-        <th>Company Description</th>
-        <th>Company Email</th>
-        <th></th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @headhunters.each do |headhunter| %>
-        <tr>
-          <td><%= image_tag headhunter.image.url(:medium) %></td>
-          <td><%= headhunter.CompanyName %></td>
-          <td><%= headhunter.CompanyDescription %></td>
-          <td><%= headhunter.CompanyEmail %></td>
-          <td><%= link_to 'Show', headhunter %></td>
+  <div id="headhunters" class="transitions-enabled">
+    <% @headhunters.each do |headhunter| %>
+      <div class="box panel panel-default">
+        <%= image_tag headhunter.image.url(:medium) %>
+        <div class="panel-body">
+          <%= headhunter.CompanyName %>
+          <%= headhunter.CompanyDescription %>
+          <%= headhunter.CompanyEmail %>
+          <%= link_to 'Show', headhunter %>
           <% if current_user.try(:admin?) %>
-            <td><%= link_to 'Edit', edit_headhunter_path(headhunter) %></td>
-            <td><%= link_to 'Destroy', headhunter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <%= link_to 'Edit', edit_headhunter_path(headhunter) %>
+            <%= link_to 'Destroy', headhunter, method: :delete, data: { confirm: 'Are you sure?' } %>
           <% end %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <% if current_user.try(:admin?) %>
-    <%= link_to 'New Headhunter', new_headhunter_path %>
-  <% end %>
+        </div>
+      </div>
+    <% end %>
+    
+    <br />
+    <% if current_user.try(:admin?) %>
+      <%= link_to 'New Headhunter', new_headhunter_path %>
+    <% end %>
+  </div>
 </div>
