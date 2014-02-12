@@ -17,15 +17,42 @@
   </div>
   <div class="form-group">
     <%= f.label :CompanyDescription %>
-    <%= f.text_field :CompanyDescription, class: "form-control" %>
+    <%= f.text_area :CompanyDescription, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :CompanyEmail %>
     <%= f.text_field :CompanyEmail, class: "form-control" %>
   </div>
   <div class="form-group">
+    <%= f.label :CompanyWebsite %>
+    <%= f.text_field :CompanyWebsite, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :CompanyLinkedin %>
+    <%= f.text_field :CompanyLinkedin, class: "form-control" %>
+  <div class="form-group">
     <%= f.label :image %>
     <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :CompanyUndergrad %>
+    <%= f.check_box :CompanyUndergrad, class: "checkbox" %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :CompanyPreMBA %>
+    <%= f.check_box :CompanyPreMBA, class: "checkbox" %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :CompanyPostMBA %>
+    <%= f.check_box :CompanyPostMBA, class: "checkbox" %>
+  </div>
+  <div class="checkbox">
+    <%= f.label :CompanyExecutive %>
+    <%= f.check_box :CompanyExecutive, class: "checkbox" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :CompanyCandidateArea %>
+    <%= f.text_area :CompanyCandidateArea, class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>

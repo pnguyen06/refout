@@ -1,31 +1,76 @@
 <div class="container">
-	<%= link_to 'Back', headhunters_path %>
-
 	<div class="row">
-		<div class="col-md-offset-2 col-md-8">
+		<div class="col-md-10 col-md-offset-1">
+			<%= link_to 'Back', headhunters_path %>
+			 | 
+			<% if current_user.try(:admin?) %>
+				<%= link_to edit_headhunter_path(@headhunter) do %>
+					<span class="glyphicon glyphicon-edit"></span>
+					Edit
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
 			<div class="panel panel-default">
-				<div class="panel-heading center">
-					<%= image_tag @headhunter.image.url(:medium) %>
-				</div>
 				<div class="panel-body">
-					<p>
-					  <%= @headhunter.CompanyName %>
-					</p>
+					<div class="row">
+						<div class="col-md-3">
+							<%= image_tag @headhunter.image.url(:medium), class: "img-thumbnail" %>
+							<small><%= link_to @headhunter.CompanyWebsite %></small>
+							<small><%= @headhunter.CompanyEmail %></small>
+							<small><%= @headhunter.CompanyLinkedin %></small>
+						</div>
+						<div class="col-md-9">
+							<h2><%= @headhunter.CompanyName %></h2>
+							<p><%= @headhunter.CompanyDescription %></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 col-md-offset-1">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h4>Firm Types</h4>
+						</div>
+						<div class="panel-body">
+							<h4>Focus</h4>
+							<% if @headhunter.CompanyUndergrad %><small><p>Undergrad</p></small><% end %>
+							<% if @headhunter.CompanyPreMBA %><small><p>PreMBA</p></small><% end %>
+							<% if @headhunter.CompanyPostMBA %><small><p>PostMBA</p></small><% end %>
+							<% if @headhunter.CompanyExecutive %><small><p>Executive</p></small><% end %>
+						</div>
+						<div class="panel-body">
+							<h4>Geography</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<% if @headhunter.CompanyCandidateArea == "None" %>
 
-					<p>
-					  <%= @headhunter.CompanyDescription %>
-					</p>
-
-					<p>
-					  <%= @headhunter.CompanyEmail %>
-					</p>
-
-					<% if current_user.try(:admin?) %>
-						<%= link_to edit_headhunter_path(@headhunter) do %>
-							<span class="glyphicon glyphicon-edit"></span>
-							Edit
-						<% end %>
-					<% end %>
+			<% else %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h4>Candidate Area</h4>
+								<small><%= @headhunter.CompanyCandidateArea %></small>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="col-md-7">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h4>Clients</h4>
 				</div>
 			</div>
 		</div>
