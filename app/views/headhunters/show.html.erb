@@ -18,9 +18,10 @@
 					<div class="row">
 						<div class="col-md-3">
 							<%= image_tag @headhunter.image.url(:medium), class: "img-thumbnail" %>
-							<small><%= link_to @headhunter.CompanyWebsite %></small>
-							<small><%= @headhunter.CompanyEmail %></small>
-							<small><%= @headhunter.CompanyLinkedin %></small>
+							<br /><br />
+							<%= link_to image_tag("glyphicons_050_link.png", :alt => "Website"), @headhunter.CompanyWebsite %>
+							<%= link_to image_tag("glyphicons_010_envelope.png", :alt => "Email"), @headhunter.CompanyEmail %>
+							<%= link_to image_tag("glyphicons_social_17_linked_in.png", :alt => "LinkedIn"), @headhunter.CompanyLinkedin %>
 						</div>
 						<div class="col-md-9">
 							<h2><%= @headhunter.CompanyName %></h2>
@@ -37,17 +38,17 @@
 				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h4>Firm Types</h4>
+							<h5>FIRM TYPES</h5>
 						</div>
 						<div class="panel-body">
-							<h4>Focus</h4>
+							<h5>FOCUS</h5>
 							<% if @headhunter.CompanyUndergrad %><small><p>Undergrad</p></small><% end %>
 							<% if @headhunter.CompanyPreMBA %><small><p>PreMBA</p></small><% end %>
 							<% if @headhunter.CompanyPostMBA %><small><p>PostMBA</p></small><% end %>
 							<% if @headhunter.CompanyExecutive %><small><p>Executive</p></small><% end %>
 						</div>
 						<div class="panel-body">
-							<h4>Geography</h4>
+							<h5>GEOGRAPHY</h5>
 						</div>
 					</div>
 				</div>
@@ -59,7 +60,7 @@
 					<div class="col-md-12">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<h4>Candidate Area</h4>
+								<h5>CANDIDATE AREA</h5>
 								<small><%= @headhunter.CompanyCandidateArea %></small>
 							</div>
 						</div>
@@ -70,7 +71,7 @@
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h4>Clients</h4>
+					<h5>CLIENTS</h5>
 				</div>
 			</div>
 		</div>
