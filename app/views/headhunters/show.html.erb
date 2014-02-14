@@ -19,9 +19,15 @@
 						<div class="col-md-3">
 							<%= image_tag @headhunter.image.url(:medium), class: "img-thumbnail" %>
 							<br /><br />
-							<%= link_to image_tag("glyphicons_050_link.png", :alt => "Website"), @headhunter.CompanyWebsite %>
-							<%= link_to image_tag("glyphicons_010_envelope.png", :alt => "Email"), @headhunter.CompanyEmail %>
-							<%= link_to image_tag("glyphicons_social_17_linked_in.png", :alt => "LinkedIn"), @headhunter.CompanyLinkedin %>
+							<%= link_to @headhunter.CompanyWebsite do %>
+								<i class="fa fa-link fa-lg"></i>
+							<% end %>
+							<%= link_to @headhunter.CompanyEmail do %>
+								<i class="fa fa-envelope fa-lg"></i>
+							<% end %>
+							<%= link_to @headhunter.CompanyLinkedin do %>
+								<i class="fa fa-linkedin-square fa-lg"></i>
+							<% end %>
 						</div>
 						<div class="col-md-9">
 							<h2><%= @headhunter.CompanyName %></h2>

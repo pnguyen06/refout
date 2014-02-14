@@ -17,6 +17,7 @@ gem 'aws-sdk', '~> 1.33.0'
 gem 'masonry-rails', '~> 0.2.1'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
+gem 'font-awesome-rails', '~> 4.0.3.1'
 
 group :development, :test do
 	gem 'sqlite3' # Use sqlite3 as the database for Active Record
