@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211014249) do
+ActiveRecord::Schema.define(version: 20140214022247) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20140211014249) do
     t.boolean  "CompanyExecutive"
     t.string   "CompanyCandidateArea"
   end
+
+  create_table "recruiters", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.string   "email"
+    t.string   "linkedin"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "headhunter_id"
+  end
+
+  add_index "recruiters", ["headhunter_id"], name: "index_recruiters_on_headhunter_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

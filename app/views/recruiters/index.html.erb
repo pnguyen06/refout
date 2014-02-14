@@ -1,0 +1,37 @@
+<div class="container">
+<h1>Listing recruiters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>Email</th>
+      <th>Linkedin</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recruiters.each do |recruiter| %>
+      <tr>
+        <td><%= recruiter.name %></td>
+        <td><%= recruiter.title %></td>
+        <td><%= recruiter.email %></td>
+        <td><%= recruiter.linkedin %></td>
+        <td><%= recruiter.description %></td>
+        <td><%= link_to 'Show', recruiter %></td>
+        <td><%= link_to 'Edit', edit_recruiter_path(recruiter) %></td>
+        <td><%= link_to 'Destroy', recruiter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recruiter', new_recruiter_path %>
+</div>
