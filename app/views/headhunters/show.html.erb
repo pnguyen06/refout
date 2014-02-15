@@ -77,7 +77,16 @@
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h5>CLIENTS</h5>
+					<h5>TEAM</h5>
+					<div id="recruiters" class="transitions-enabled">
+    				<% @recruiters.each do |recruiter| %>
+    					<table>
+    						<tr>
+    				    	<td><%= recruiter.name %></td>
+    				  	</tr>
+    				  </table>
+    				<% end %>
+    			</div>
 				</div>
 			</div>
 		</div>
