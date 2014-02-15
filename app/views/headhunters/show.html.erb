@@ -21,16 +21,16 @@
 						</div>
 						<div class="col-md-9">
 							<h2><%= @headhunter.CompanyName %></h2>
-							<p><%= @headhunter.CompanyDescription %></p>
+							<small><%= @headhunter.CompanyDescription %></small>
 						</div>
 					</div>
 				</div>
 				<div class="panel-body right" style="background-color: #ecf0f1;">
-					<%= link_to @headhunter.CompanyWebsite, @headhunter.CompanyWebsite %>
-					<%= link_to @headhunter.CompanyEmail do %>
+					<%= link_to @headhunter.CompanyWebsite, "http://#{@headhunter.CompanyWebsite}" %>
+					<%= mail_to @headhunter.CompanyEmail do %>
 						<i class="fa fa-envelope fa-lg"></i>
 					<% end %>
-					<%= link_to @headhunter.CompanyLinkedin do %>
+					<%= link_to "http://#{@headhunter.CompanyLinkedin}" do %>
 						<i class="fa fa-linkedin-square fa-lg"></i>
 					<% end %>
 				</div>
@@ -80,13 +80,13 @@
 					<div id="recruiters" class="transitions-enabled">
     				<% @recruiters.each do |recruiter| %>
     					<div class="box-recruiters center">	          		
-								<%= link_to image_tag(recruiter.image.url(:medium), :class => "img-circle"), ".bs-example-modal-lg", :data => {:toggle => "modal"} %>	
+								<%= link_to image_tag(recruiter.image.url(:medium), :class => "img-circle"), ".recruiter-modal", :data => {:toggle => "modal"} %>	
 	          		<p style="line-height: 1.0;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
-		          	<%= link_to recruiter.email do %>
+		          	<%= mail_to recruiter.email do %>
 									<i class="fa fa-envelope fa-lg"></i>
 								<% end %>
-								<%= link_to recruiter.linkedin do %>
+								<%= link_to "http://#{recruiter.linkedin}" do %>
 									<i class="fa fa-linkedin-square fa-lg"></i>
 								<% end %>
 	      			</div>
@@ -102,10 +102,10 @@
 </div>
 
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal fade recruiter-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      ...
-    </div>
+			To Come    
+		</div>
   </div>
 </div>
