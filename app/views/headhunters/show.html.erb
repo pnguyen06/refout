@@ -80,11 +80,17 @@
 					<h5>TEAM</h5>
 					<div id="recruiters" class="transitions-enabled">
     				<% @recruiters.each do |recruiter| %>
-    					<table>
-    						<tr>
-    				    	<td><%= recruiter.name %></td>
-    				  	</tr>
-    				  </table>
+    					<div class="box-recruiters center">
+								<%= image_tag(recruiter.image.url(:medium), :class => "") %>
+	          		<p style="line-height: 1;"><%= recruiter.name %></p>
+	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
+		          	<%= link_to recruiter.email do %>
+									<i class="fa fa-envelope fa-lg"></i>
+								<% end %>
+								<%= link_to recruiter.linkedin do %>
+									<i class="fa fa-linkedin-square fa-lg"></i>
+								<% end %>
+	      			</div>
     				<% end %>
     			</div>
 				</div>
