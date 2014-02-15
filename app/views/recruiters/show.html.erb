@@ -1,31 +1,33 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recruiter.name %>
-</p>
+  <%= image_tag(@recruiter.image.url(:medium), :class => "") %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @recruiter.title %>
-</p>
+  <p>
+    <strong>Name:</strong>
+    <%= @recruiter.name %>
+  </p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @recruiter.email %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @recruiter.title %>
+  </p>
 
-<p>
-  <strong>Linkedin:</strong>
-  <%= @recruiter.linkedin %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @recruiter.email %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @recruiter.description %>
-</p>
+  <p>
+    <strong>Linkedin:</strong>
+    <%= @recruiter.linkedin %>
+  </p>
 
-<%= link_to 'Edit', edit_recruiter_path(@recruiter) %> |
-<%= link_to 'Back', recruiters_path %>
+  <p>
+    <strong>Description:</strong>
+    <%= @recruiter.description %>
+  </p>
+
+  <%= link_to 'Edit', edit_recruiter_path(@recruiter) %> |
+  <%= link_to 'Back', recruiters_path %>
 </div>

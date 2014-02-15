@@ -82,7 +82,7 @@
     				<% @recruiters.each do |recruiter| %>
     					<div class="box-recruiters center">
 								<%= image_tag(recruiter.image.url(:medium), :class => "") %>
-	          		<p style="line-height: 1;"><%= recruiter.name %></p>
+	          		<p style="line-height: 1.0;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
 		          	<%= link_to recruiter.email do %>
 									<i class="fa fa-envelope fa-lg"></i>
@@ -93,6 +93,9 @@
 	      			</div>
     				<% end %>
     			</div>
+    			<div class="center">
+    				<%= will_paginate @recruiters, renderer: BootstrapPagination::Rails %>
+  				</div>
 				</div>
 			</div>
 		</div>
