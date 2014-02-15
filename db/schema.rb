@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140215135024) do
+ActiveRecord::Schema.define(version: 20140215215750) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -48,6 +48,15 @@ ActiveRecord::Schema.define(version: 20140215135024) do
     t.boolean  "CompanyPostMBA"
     t.boolean  "CompanyExecutive"
     t.string   "CompanyCandidateArea"
+    t.string   "street1"
+    t.string   "city1"
+    t.string   "phone1"
+    t.string   "street2"
+    t.string   "city2"
+    t.string   "phone2"
+    t.string   "street3"
+    t.string   "city3"
+    t.string   "phone3"
   end
 
   create_table "recruiters", force: true do |t|

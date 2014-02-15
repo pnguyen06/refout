@@ -16,10 +16,10 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-md-3">
+						<div class="col-md-2">
 							<%= image_tag @headhunter.image.url(:medium), class: "img-thumbnail" %>
 						</div>
-						<div class="col-md-9">
+						<div class="col-md-10">
 							<h2><%= @headhunter.CompanyName %></h2>
 							<small><%= @headhunter.CompanyDescription %></small>
 						</div>
@@ -42,22 +42,27 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">
+						<!--
 						<div class="panel-body">
-							<h5>FIRM TYPES</h5>
+							<h5><strong>FIRM TYPES</strong></h5>
 						</div>
+						-->
 						<div class="panel-body">
-							<h5>FOCUS</h5>
+							<h5><strong>LEVEL</strong></h5>
 							<% if @headhunter.CompanyUndergrad %><small><p>Undergrad</p></small><% end %>
 							<% if @headhunter.CompanyPreMBA %><small><p>PreMBA</p></small><% end %>
 							<% if @headhunter.CompanyPostMBA %><small><p>PostMBA</p></small><% end %>
 							<% if @headhunter.CompanyExecutive %><small><p>Executive</p></small><% end %>
 						</div>
+						<!--
 						<div class="panel-body">
-							<h5>GEOGRAPHY</h5>
+							<h5><strong>GEOGRAPHY</strong></h5>
 						</div>
+						-->
 					</div>
 				</div>
 			</div>
+			<!-- CANDIDATE AREA -->
 			<% if @headhunter.CompanyCandidateArea == "None" %>
 
 			<% else %>
@@ -65,18 +70,54 @@
 					<div class="col-md-12">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<h5>CANDIDATE AREA</h5>
+								<h5><strong>CANDIDATE AREA</strong></h5>
 								<small><%= @headhunter.CompanyCandidateArea %></small>
 							</div>
 						</div>
 					</div>
 				</div>
 			<% end %>
+			<!-- OFFICE AREA -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<h5><strong>OFFICES</strong></h5>
+								<small>
+									<% if @headhunter.street1.empty? %>
+
+									<% else %>
+										<%= @headhunter.street1 %><br />
+										<%= @headhunter.city1 %><br />
+										<%= @headhunter.phone1 %><br />
+									<% end %>
+									<% if @headhunter.street2.empty? %>
+
+									<% else %>
+										<br />
+										<%= @headhunter.street2 %><br />
+										<%= @headhunter.city2 %><br />
+										<%= @headhunter.phone2 %><br />
+									<% end %>
+									<% if @headhunter.street3.empty? %>
+
+									<% else %>
+										<br />
+										<%= @headhunter.street3 %><br />
+										<%= @headhunter.city3 %><br />
+										<%= @headhunter.phone3 %><br />
+									<% end %>
+								</small>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		<!-- TEAM AREA -->
 		<div class="col-md-7">
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<h5>TEAM</h5>
+					<h5><strong>TEAM</strong></h5>
 					<div id="recruiters" class="transitions-enabled">
     				<% @recruiters.each do |recruiter| %>
     					<div class="box-recruiters center">	          		
