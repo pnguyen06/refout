@@ -58,7 +58,7 @@
 						<div class="panel-body">
 							<h5><strong>GEOGRAPHY</strong></h5>
 						</div>
-						-->
+					-->
 					</div>
 				</div>
 			</div>
@@ -78,40 +78,40 @@
 				</div>
 			<% end %>
 			<!-- OFFICE AREA -->
-			<div class="row">
-				<div class="col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<h5><strong>OFFICES</strong></h5>
-								<small>
-									<% if @headhunter.street1.empty? %>
+			<% if @headhunter.street1 == "None" %>
 
-									<% else %>
+			<% else %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h5><strong>OFFICES</strong></h5>
+									<small>
 										<%= @headhunter.street1 %><br />
 										<%= @headhunter.city1 %><br />
 										<%= @headhunter.phone1 %><br />
-									<% end %>
-									<% if @headhunter.street2.empty? %>
+										<% if @headhunter.street2 == "None" %>
 
-									<% else %>
-										<br />
-										<%= @headhunter.street2 %><br />
-										<%= @headhunter.city2 %><br />
-										<%= @headhunter.phone2 %><br />
-									<% end %>
-									<% if @headhunter.street3.empty? %>
+										<% else %>
+											<br />
+											<%= @headhunter.street2 %><br />
+											<%= @headhunter.city2 %><br />
+											<%= @headhunter.phone2 %><br />
+										<% end %>
+										<% if @headhunter.street3 == "None" %>
 
-									<% else %>
-										<br />
-										<%= @headhunter.street3 %><br />
-										<%= @headhunter.city3 %><br />
-										<%= @headhunter.phone3 %><br />
-									<% end %>
-								</small>
+										<% else %>
+											<br />
+											<%= @headhunter.street3 %><br />
+											<%= @headhunter.city3 %><br />
+											<%= @headhunter.phone3 %><br />
+										<% end %>
+									</small>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			<% end %>
 		</div>
 		<!-- TEAM AREA -->
 		<div class="col-md-7">
