@@ -2,9 +2,18 @@ class HeadhuntersController < ApplicationController
   before_action :set_headhunter, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_user!, only: [:new]
   before_filter :verify_is_admin, only: [:new, :edit, :update, :destroy]
+  has_scope :Undergrad, :type => :boolean
+  has_scope :PreMBA, :type => :boolean
+  has_scope :PostMBA, :type => :boolean
+  has_scope :Executive, :type => :boolean
 
   def index
-    @headhunters = Headhunter.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+    # @headhunters_updated = Headhunter.all.order("updated_at DESC").paginate(:page => params[:page], :per_page => 12)
+    # @headhunters_alphabetical = Headhunter.all.order(:CompanyName).paginate(:page => params[:page], :per_page => 12)
+    # @headhunters_added = Headhunter.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
+    
+    @headhunters = apply_scopes(Headhunter.all.order("updated_at DESC").paginate(:page => params[:page], :per_page => 12))
+
   end
 
   def show
