@@ -59,7 +59,7 @@ class HeadhuntersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def headhunter_params
-      params.require(:headhunter).permit(:CompanyName, :CompanyDescription, :CompanyEmail, :CompanyWebsite, :CompanyLinkedin, :image, :CompanyUndergrad, :CompanyPreMBA, :CompanyPostMBA, :CompanyExecutive, :CompanyCandidateArea, :street1, :city1, :phone1, :street2, :city2, :phone2, :street3, :city3, :phone3)
+      params.require(:headhunter).permit(:CompanyName, :CompanyDescription, :CompanyEmail, :CompanyWebsite, :CompanyLinkedin, :CompanyFacebook, :CompanyTwitter, :image, :CompanyUndergrad, :CompanyPreMBA, :CompanyPostMBA, :CompanyExecutive, :CompanyCandidateArea, :CompanyJobs, :street1, :city1, :phone1, :street2, :city2, :phone2, :street3, :city3, :phone3)
     end
 
     def verify_is_admin

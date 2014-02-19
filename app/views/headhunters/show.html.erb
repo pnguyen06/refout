@@ -27,14 +27,36 @@
 				</div>
 				<div class="panel-body right" style="background-color: #ecf0f1;">
 					<%= link_to @headhunter.CompanyWebsite, "http://#{@headhunter.CompanyWebsite}" %>
-					<%= mail_to @headhunter.CompanyEmail do %>
-						<i class="fa fa-envelope fa-lg"></i>
+					<% if @headhunter.CompanyEmail == "None" %>
+
+					<% else %>
+						&nbsp;
+						<%= mail_to @headhunter.CompanyEmail do %>
+							<i class="fa fa-envelope fa-lg"></i>
+						<% end %>
 					<% end %>
 					<% if @headhunter.CompanyLinkedin == "None" %>
 
 					<% else %>
+						&nbsp;
 						<%= link_to "http://#{@headhunter.CompanyLinkedin}" do %>
-							<i class="fa fa-linkedin-square fa-lg"></i>
+							<i class="fa fa-linkedin fa-lg"></i>
+						<% end %>
+					<% end %>
+					<% if @headhunter.CompanyFacebook == "None" %>
+
+					<% else %>
+						&nbsp;
+						<%= link_to "http://#{@headhunter.CompanyFacebook}" do %>
+							<i class="fa fa-facebook fa-lg"></i>
+						<% end %>
+					<% end %>
+					<% if @headhunter.CompanyTwitter == "None" %>
+
+					<% else %>
+						&nbsp;
+						<%= link_to "http://#{@headhunter.CompanyTwitter}" do %>
+							<i class="fa fa-twitter fa-lg"></i>
 						<% end %>
 					<% end %>
 				</div>
@@ -76,6 +98,21 @@
 							<div class="panel-body">
 								<h5><strong>CANDIDATE AREA</strong></h5>
 								<small><%= raw @headhunter.CompanyCandidateArea %></small>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			<!-- JOBS AREA -->
+			<% if @headhunter.CompanyJobs == "None" %>
+
+			<% else %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<h5><strong>CURRENT SEARCHES</strong></h5>
+								<small><%= raw @headhunter.CompanyJobs %></small>
 							</div>
 						</div>
 					</div>
