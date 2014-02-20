@@ -4,27 +4,27 @@
       <div class="panel panel-default" style="margin-top: 5px;">
         <div class="panel-body">
           <h5><strong>LEVEL</strong></h5>
-          <%= form_tag '', :method => :get do %>
-            <div class="form-group small">
-              <%= check_box_tag :Undergrad %>
-              Undergrad
-            </div>
-            <div class="form-group small">
-              <%= check_box_tag :PreMBA %>
-              PreMBA
-            </div>
-            <div class="form-group small">
-              <%= check_box_tag :PostMBA %>
+          <form action='' method="get">
+            <label class="form-group small">
+              <%= check_box_tag :Undergrad, class: "form-control" %>
+              Undergrad<br />
+            </label>
+            <label class="form-group small">
+              <%= check_box_tag :PreMBA, class: "form-control" %>
+              PreMBA<br />
+            </label>
+            <label class="form-group small">
+              <%= check_box_tag :PostMBA, class: "form-control" %>
               PostMBA
-            </div>
-            <div class="form-group small">
-              <%= check_box_tag :Executive %>
-              Executive
-            </div>
-            <div class="form-group">
+            </label>
+            <label class="form-group small">
+              <%= check_box_tag :Executive, class: "form-control" %>
+              Executive<br />
+            </label>
+            <label class="form-group">
               <%= submit_tag 'Filter', name: nil, class: "btn btn-primary" %>
-            </div>
-          <% end %>
+            </label>
+          </form>
         </div>
       </div>
     </div>
