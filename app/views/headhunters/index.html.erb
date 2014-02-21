@@ -5,25 +5,23 @@
         <div class="panel-body">
           <h5><strong>LEVEL</strong></h5>
           <form action='' method="get">
-            <label class="form-group small">
+            <div class="small">
               <%= check_box_tag :Undergrad %>
-              Undergrad
-            </label>
-            <label class="form-group small">
+              <%= label_tag :Undergrad, "Undergrad", class: 'label_filter' %>
+            </div>
+            <div class="small">
               <%= check_box_tag :PreMBA %>
-              PreMBA
-            </label>
-            <label class="form-group small">
+              <%= label_tag :PreMBA, "PreMBA", class: 'label_filter' %>
+           </div>
+            <div class="small">
               <%= check_box_tag :PostMBA %>
-              PostMBA
-            </label>
-            <label class="form-group small">
+              <%= label_tag :PostMBA, "PostMBA", class: 'label_filter' %>
+            </div>
+            <div class="small">
               <%= check_box_tag :Executive %>
-              Executive
-            </label>
-            <label class="form-group">
-              <%= submit_tag 'Filter', name: nil, class: "btn btn-primary" %>
-            </label>
+              <%= label_tag :Executive, "Executive", class: 'label_filter' %>
+            </div>
+            <%= submit_tag 'Filter', name: nil, class: "btn btn-primary" %>
           </form>
         </div>
       </div>
