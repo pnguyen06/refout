@@ -1,4 +1,13 @@
 <div class="container">
+
+	<div class="modal fade recruiter-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog modal-lg">
+	    <div class="modal-content">
+				To Come
+			</div>
+	  </div>
+	</div>
+
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<%= link_to 'Back', headhunters_path %>
@@ -25,14 +34,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="panel-body right" style="background-color: #ecf0f1;">
-					<%= link_to @headhunter.CompanyWebsite, "http://#{@headhunter.CompanyWebsite}" %>
+				<div class="panel-body right" style="background-color: #5a5a5a;">
+					<%= link_to @headhunter.CompanyWebsite, "http://#{@headhunter.CompanyWebsite}", class: "link-gray" %>
 					<% if @headhunter.CompanyEmail == "None" %>
 
 					<% else %>
 						&nbsp;
 						<%= mail_to @headhunter.CompanyEmail do %>
-							<i class="fa fa-envelope fa-lg"></i>
+							<i class="fa fa-envelope fa-lg link-gray"></i>
 						<% end %>
 					<% end %>
 					<% if @headhunter.CompanyLinkedin == "None" %>
@@ -40,7 +49,7 @@
 					<% else %>
 						&nbsp;
 						<%= link_to "http://#{@headhunter.CompanyLinkedin}" do %>
-							<i class="fa fa-linkedin fa-lg"></i>
+							<i class="fa fa-linkedin fa-lg link-gray"></i>
 						<% end %>
 					<% end %>
 					<% if @headhunter.CompanyFacebook == "None" %>
@@ -48,7 +57,7 @@
 					<% else %>
 						&nbsp;
 						<%= link_to "http://#{@headhunter.CompanyFacebook}" do %>
-							<i class="fa fa-facebook fa-lg"></i>
+							<i class="fa fa-facebook fa-lg link-gray"></i>
 						<% end %>
 					<% end %>
 					<% if @headhunter.CompanyTwitter == "None" %>
@@ -56,7 +65,7 @@
 					<% else %>
 						&nbsp;
 						<%= link_to "http://#{@headhunter.CompanyTwitter}" do %>
-							<i class="fa fa-twitter fa-lg"></i>
+							<i class="fa fa-twitter fa-lg link-gray"></i>
 						<% end %>
 					<% end %>
 				</div>
@@ -165,11 +174,19 @@
 								<%= link_to image_tag(recruiter.image.url(:medium), :class => "img-circle"), ".recruiter-modal", :data => {:toggle => "modal"} %>	
 	          		<p style="line-height: 1.0;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
-		          	<%= mail_to recruiter.email do %>
-									<i class="fa fa-envelope fa-lg"></i>
+	          		<% if recruiter.email == "None" %>
+
+								<% else %>
+		          		<%= mail_to recruiter.email do %>
+										<i class="fa fa-envelope fa-lg"></i>
+									<% end %>
 								<% end %>
-								<%= link_to "http://#{recruiter.linkedin}" do %>
-									<i class="fa fa-linkedin-square fa-lg"></i>
+								<% if recruiter.linkedin == "None" %>
+
+								<% else %>
+									<%= link_to "http://#{recruiter.linkedin}" do %>
+										<i class="fa fa-linkedin fa-lg"></i>
+									<% end %>
 								<% end %>
 	      			</div>
     				<% end %>
@@ -184,10 +201,3 @@
 </div>
 
 
-<div class="modal fade recruiter-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-			To Come    
-		</div>
-  </div>
-</div>
