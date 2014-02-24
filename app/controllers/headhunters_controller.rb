@@ -18,7 +18,7 @@ class HeadhuntersController < ApplicationController
 
   def show
     @headhunter = Headhunter.find(params[:id])
-    @recruiters = @headhunter.recruiters.paginate(:page => params[:page], :per_page => 6)
+    @recruiters = @headhunter.recruiters.order(:name).paginate(:page => params[:page], :per_page => 6)
   end
 
   def new

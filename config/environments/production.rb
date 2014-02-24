@@ -20,6 +20,7 @@ Refout::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
+  # LOOK INTO LATER
   config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
@@ -27,6 +28,7 @@ Refout::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
+  # LOOK INTO LATER
   config.assets.compile = true
 
   # Generate digests for assets URLs.
