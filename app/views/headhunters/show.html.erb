@@ -1,13 +1,4 @@
 <div class="container">
-
-	<div class="modal fade recruiter-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  <div class="modal-dialog modal-lg">
-	    <div class="modal-content">
-				To Come
-			</div>
-	  </div>
-	</div>
-
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 			<%= link_to 'Back', headhunters_path %>
@@ -189,6 +180,15 @@
 									<% end %>
 								<% end %>
 	      			</div>
+
+	      			<div class="modal fade recruiter-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  						<div class="modal-dialog modal-lg">
+	    						<div class="modal-content">
+										<%= recruiter.description %>
+									</div>
+	  						</div>
+							</div>
+
     				<% end %>
     			</div>
     			<div class="center">
