@@ -163,7 +163,7 @@
     				<% @recruiters.each do |recruiter| %>
     					<div class="box-recruiters center">	          		
 								<%= link_to image_tag(recruiter.image.url(:medium), :class => "img-circle"), ".recruiter-modal", :data => {:toggle => "modal"} %>	
-	          		<p style="line-height: 1.0;"><%= recruiter.name %></p>
+	          		<p style="line-height: 1.0; margin-top: 5px;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
 	          		<% if recruiter.email == "None" %>
 
