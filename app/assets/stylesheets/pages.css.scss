@@ -29,3 +29,16 @@
 .link-social:hover {
 	color: #71c6c1;
 }
+
+.link-dark-gray {
+	color: #5a5a5a;
+}
+
+.link-dark-gray:hover {
+	color: #71c6c1;
+	text-decoration: none;
+}
+
+.nav > li > a:hover {
+	background-color: white;
+}
