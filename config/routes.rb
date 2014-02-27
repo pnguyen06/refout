@@ -6,6 +6,7 @@ Refout::Application.routes.draw do
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
+  get "contact" => "pages#contact"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
