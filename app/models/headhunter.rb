@@ -1,6 +1,7 @@
 class Headhunter < ActiveRecord::Base
 	has_many :recruiters
 
+	scope :isMega, -> {where(:mega => true)}
 	scope :Undergrad, -> {where(:CompanyUndergrad => true)}
 	scope :PreMBA, -> {where(:CompanyPreMBA => true)}
 	scope :PostMBA, -> {where(:CompanyPostMBA => true)}

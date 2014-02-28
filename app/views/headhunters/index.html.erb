@@ -3,8 +3,14 @@
     <div class="col-md-2 col-md-offset-1">
       <div class="panel panel-default" style="margin-top: 5px;">
         <div class="panel-body">
-          <h5><strong>LEVEL</strong></h5>
+          
           <form action='' method="get">
+            <h5><strong>CLIENT TYPES</strong></h5>
+            <div class="small">
+              <%= check_box_tag :isMega %>
+              <%= label_tag :isMega, "Mega Funds", class: 'label_filter' %>
+            </div>
+            <h5><strong>LEVEL</strong></h5>
             <div class="small">
               <%= check_box_tag :Undergrad %>
               <%= label_tag :Undergrad, "Undergrad", class: 'label_filter' %>
