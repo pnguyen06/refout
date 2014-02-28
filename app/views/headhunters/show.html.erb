@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
-			<%= link_to 'Back', headhunters_path %>
+		<div class="col-md-10 col-md-offset-1 link-dark-gray">
+			<%= link_to 'Back', headhunters_path, :class => "link-dark-gray" %>
 			<% if current_user.try(:admin?) %>
 				 | 
 				<%= link_to edit_headhunter_path(@headhunter) do %>
@@ -71,8 +71,7 @@
 						<div class="panel-body">
 							<h5><strong>CLIENT TYPES</strong></h5>
 							<% if @headhunter.mega %><small><p>Mega Funds</p></small><% end %>
-						</div>
-						<div class="panel-body">
+							<br />
 							<h5><strong>LEVEL</strong></h5>
 							<% if @headhunter.CompanyUndergrad %><small><p>Undergrad</p></small><% end %>
 							<% if @headhunter.CompanyPreMBA %><small><p>PreMBA</p></small><% end %>
@@ -168,14 +167,14 @@
 
 								<% else %>
 		          		<%= mail_to recruiter.email do %>
-										<i class="fa fa-envelope fa-lg"></i>
+										<i class="fa fa-envelope fa-lg link-dark-gray"></i>
 									<% end %>
 								<% end %>
 								<% if recruiter.linkedin == "None" %>
 
 								<% else %>
 									<%= link_to "http://#{recruiter.linkedin}" do %>
-										<i class="fa fa-linkedin fa-lg"></i>
+										<i class="fa fa-linkedin fa-lg link-dark-gray"></i>
 									<% end %>
 								<% end %>
 	      			</div>
