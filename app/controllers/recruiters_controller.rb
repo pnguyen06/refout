@@ -4,7 +4,7 @@ class RecruitersController < ApplicationController
 
 
   def index
-    @recruiters = Recruiter.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
+    @recruiters = Recruiter.all.order("updated_at DESC")
   end
 
   def show
