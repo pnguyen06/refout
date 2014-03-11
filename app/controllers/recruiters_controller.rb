@@ -4,10 +4,12 @@ class RecruitersController < ApplicationController
 
 
   def index
+    Recruiter.joins(:recruiter, :headhunter).where("recruiter.headhunter_id = headhunter.id")
     @recruiters = Recruiter.all.order("updated_at DESC")
   end
 
   def show
+    Recruiter.joins(:recruiter, :headhunter).where("recruiter.headhunter_id = headhunter.id")
   end
 
   def new

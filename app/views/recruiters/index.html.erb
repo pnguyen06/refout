@@ -1,20 +1,31 @@
 <div class="container">
 <h1>Listing recruiters</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
+      <th>Headhunter</th>
     </tr>
   </thead>
 
   <tbody>
     <% @recruiters.each do |recruiter| %>
       <tr>
-        <td><%= recruiter.name %></td>
-        <td><%= link_to 'Show', recruiter %></td>
-        <td><%= link_to 'Edit', edit_recruiter_path(recruiter) %></td>
-        <td><%= link_to 'Destroy', recruiter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to recruiter.name, recruiter %></td>
+        <td><%= recruiter.headhunter.CompanyName %></td>
+        <td>
+          <%= link_to edit_recruiter_path(recruiter) do %>
+            <span class="glyphicon glyphicon-edit"></span>
+            Edit
+          <% end %>
+        </td>
+        <td>
+          <%= link_to recruiter, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash"></span>
+            Delete
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
