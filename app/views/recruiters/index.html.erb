@@ -13,7 +13,7 @@
     <% @recruiters.each do |recruiter| %>
       <tr>
         <td><%= link_to recruiter.name, recruiter %></td>
-        <td><%= recruiter.headhunter.CompanyName %></td>
+        <td><%= recruiter.headhunter.try(:CompanyName).blank? ? 'N/A' : recruiter.headhunter.CompanyName %></td>        
         <td>
           <%= link_to edit_recruiter_path(recruiter) do %>
             <span class="glyphicon glyphicon-edit"></span>
