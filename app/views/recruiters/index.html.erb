@@ -1,11 +1,12 @@
 <div class="container">
-<h1>Listing recruiters</h1>
+<h1>List of Recruiters</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
       <th>Headhunter</th>
+      <th>Last Updated</th>
     </tr>
   </thead>
 
@@ -13,7 +14,8 @@
     <% @recruiters.each do |recruiter| %>
       <tr>
         <td><%= link_to recruiter.name, recruiter %></td>
-        <td><%= recruiter.headhunter.try(:CompanyName).blank? ? 'N/A' : recruiter.headhunter.CompanyName %></td>        
+        <td><%= recruiter.headhunter.try(:CompanyName).blank? ? 'N/A' : recruiter.headhunter.CompanyName %></td>
+        <td><%= recruiter.updated_at.strftime("%m/%d/%Y") %></td>       
         <td>
           <%= link_to edit_recruiter_path(recruiter) do %>
             <span class="glyphicon glyphicon-edit"></span>
