@@ -7,3 +7,8 @@ $ ->
 		$('#headhunters').masonry
 			itemSelector: '.box'
 			isFitWidth: true
+
+$(document).on "click", ".recruiterBio", ->
+	myRecruiterID = $(this).data('id')
+	$('.modal-body #recruiterID').val myRecruiterID
+	return

@@ -1,4 +1,24 @@
 <div class="container">
+
+	<!-- MODAL -->
+	<div class="modal fade" id="recruiterModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" id="recruiterID">
+				
+					<!--<% @recruiter = Recruiter.find(2) %>
+					<%= @recruiter.name %>
+					<%= @recruiter.description %>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1 link-dark-gray">
 			<%= link_to 'Back', headhunters_path, :class => "link-dark-gray" %>
@@ -154,8 +174,8 @@
 					<h5><strong>TEAM</strong></h5>
 					<div id="recruiters" class="transitions-enabled">
     				<% @recruiters.each do |recruiter| %>
-    					<div class="box-recruiters center">	          		
-								<%= link_to image_tag(recruiter.image.url(:medium), :class => "img-circle"), ".recruiterModal", :data => {:toggle => "modal"} %>	
+    					<div class="box-recruiters center">	          	
+								<%= link_to( image_tag(recruiter.image.url(:medium), :class => "img-circle"), "#recruiterModal", :class => "recruiterBio", :data => {:toggle => "modal", :id => "#{recruiter.description}"}) %>	
 	          		<p style="line-height: 1.0; margin-top: 5px;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
 	          		<% if recruiter.email == "None" %>
@@ -173,21 +193,6 @@
 									<% end %>
 								<% end %>
 	      			</div>
-
-	      			<div class="modal fade recruiterModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	  						<div class="modal-dialog">
-	    						<div class="modal-content">
-	    							<div class="modal-header">
-	    								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        							<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-	    							</div>
-	    							<div class="modal-body">
-											<%= recruiter.description %>
-										</div>
-									</div>
-	  						</div>
-							</div>
-
     				<% end %>
     			</div>
     			<div class="center">
