@@ -6,14 +6,10 @@
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+					<h4 class="modal-title" id="recruiterName" />
 				</div>
 				<div class="modal-body">
-					<input type="text" id="recruiterID">
-				
-					<!--<% @recruiter = Recruiter.find(2) %>
-					<%= @recruiter.name %>
-					<%= @recruiter.description %>-->
+					<p id="recruiterDesc" />
 				</div>
 			</div>
 		</div>
@@ -175,7 +171,7 @@
 					<div id="recruiters" class="transitions-enabled">
     				<% @recruiters.each do |recruiter| %>
     					<div class="box-recruiters center">	          	
-								<%= link_to( image_tag(recruiter.image.url(:medium), :class => "img-circle"), "#recruiterModal", :class => "recruiterBio", :data => {:toggle => "modal", :id => "#{recruiter.description}"}) %>	
+								<%= link_to( image_tag(recruiter.image.url(:medium), :class => "img-circle"), "#recruiterModal", :class => "recruiterBio", :data => {:toggle => "modal", :description => "#{recruiter.description}", :name => "#{recruiter.name}"}) %>	
 	          		<p style="line-height: 1.0; margin-top: 5px;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
 	          		<% if recruiter.email == "None" %>

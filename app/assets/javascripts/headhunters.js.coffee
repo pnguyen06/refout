@@ -9,6 +9,8 @@ $ ->
 			isFitWidth: true
 
 $(document).on "click", ".recruiterBio", ->
-	myRecruiterID = $(this).data('id')
-	$('.modal-body #recruiterID').val myRecruiterID
+	myRecruiterDesc = $(this).data('description')
+	$('.modal-body #recruiterDesc').html myRecruiterDesc
+	myRecruiterName = $(this).data('name')
+	$('.modal-header #recruiterName').html myRecruiterName
 	return
