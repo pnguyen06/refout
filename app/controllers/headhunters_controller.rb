@@ -7,6 +7,8 @@ class HeadhuntersController < ApplicationController
   has_scope :PreMBA, :type => :boolean
   has_scope :PostMBA, :type => :boolean
   has_scope :Executive, :type => :boolean
+  has_scope :hasJobs, :type => :boolean
+
 
   def index
     # @headhunters_updated = Headhunter.all.order("updated_at DESC").paginate(:page => params[:page], :per_page => 12)

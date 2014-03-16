@@ -27,6 +27,11 @@
               <%= check_box_tag :Executive %>
               <%= label_tag :Executive, "Executive", class: 'label_filter' %>
             </div>
+            <h5><strong>OTHER</strong></h5>
+            <div class="small">
+              <%= check_box_tag :hasJobs %>
+              <%= label_tag :hasJobs, "Job Listings", class: 'label_filter' %>
+            </div>
             <%= submit_tag 'Filter', name: nil, class: "btn btn-primary" %>
           </form>
         </div>
