@@ -14,3 +14,10 @@
 .box img {
 	width: 100%;
 }
+
+@media (max-width: 767px) {
+  .box {
+    width: 150px;
+    font-size: 10px;
+  }
+}
