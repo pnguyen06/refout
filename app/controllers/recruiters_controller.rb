@@ -1,6 +1,6 @@
 class RecruitersController < ApplicationController
   before_action :set_recruiter, only: [:show, :edit, :update, :destroy]
-  before_filter :verify_is_admin, only: [:new, :edit, :update, :destroy, :index]
+  before_filter :verify_is_admin, only: [:new, :edit, :update, :destroy, :index, :show]
 
 
   def index
