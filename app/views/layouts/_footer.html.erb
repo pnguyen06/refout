@@ -1,6 +1,12 @@
 <div id="footer"> 
 	<div class="container" style="margin-top: 15px;">
-		<strong><a href="#">+ Add a Company</a></strong> &nbsp; &nbsp;
+		<strong><a id="submitnew" data-toggle="tooltip" rel="popover">+ Add a Company</a></strong>
+
+		<div id="popover_content_wrapper" style="display: none">
+  		<div>Please send us an email at hello@refout.com</div>
+		</div>
+
+		 &nbsp; &nbsp;
 		<a href="#">Blog</a> &nbsp; &nbsp;
 		<%= link_to "About", about_path %> &nbsp; &nbsp;
 		<%= link_to "Contact", contact_path %> &nbsp; &nbsp;
@@ -20,3 +26,20 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+$('a#submitnew').click(function() {
+    $('a#submitnew').popover({
+      html: true,
+      trigger: 'manual',
+      placement: 'top',
+      content: function() {
+      	return $('#popover_content_wrapper').html();
+    	},
+      title: 'Add a Company'
+  });
+  $('a#submitnew').popover("show");
+});
+
+</script>
