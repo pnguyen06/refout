@@ -15,7 +15,7 @@ class HeadhuntersController < ApplicationController
     # @headhunters_alphabetical = Headhunter.all.order(:CompanyName).paginate(:page => params[:page], :per_page => 12)
     # @headhunters_added = Headhunter.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
     
-    @headhunters = apply_scopes(Headhunter.all.order("updated_at DESC").paginate(:page => params[:page], :per_page => 24))
+    @headhunters = apply_scopes(Headhunter.all.order(:CompanyName).paginate(:page => params[:page], :per_page => 24))
 
   end
 
