@@ -15,14 +15,12 @@
 					  <ol class="carousel-indicators" style="top:180px;">
 					    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-					    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 					  </ol>
 
 					  <!-- Wrapper for slides -->
 					  <div class="carousel-inner">
-					    <div class="item active"><img src="http://placehold.it/350x200" alt=""></div>
-					    <div class="item"><img src="http://placehold.it/350x200" alt=""></div>
-					    <div class="item"><img src="http://placehold.it/350x200" alt=""></div>
+					    <div class="item active"><%= image_tag("highline.jpg") %></div>
+					    <div class="item"><%= image_tag("laptop.jpg") %></div>
 					  </div>
 
 					  <!-- Controls -->
@@ -66,7 +64,7 @@
 <script type='text/javascript'>
   $(document).ready(function() {
        $('.carousel').carousel({
-           interval: 2000
+           interval: 2500
        })
   });    
 </script>
