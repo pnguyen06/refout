@@ -1,9 +1,9 @@
 <div id="footer"> 
 	<div class="container" style="margin-top: 15px;">
-		<strong><a id="submitnew" data-toggle="tooltip" rel="popover">+ Add a Company</a></strong>
+		<strong><a id="submitnew" data-toggle="popover">+ Add a Company</a></strong>
 
 		<div id="popover_content_wrapper" style="display: none">
-  		<div>Please send us an email at hello@refout.com</div>
+  		<div>Please send us an email at <a href="mailto:hello@refout.com">hello@refout.com</a></div>
 		</div>
 
 		 &nbsp; &nbsp;
@@ -15,7 +15,7 @@
 				<i class="fa fa-facebook fa-lg link-social" style="font-size: 24px;"></i>
 			<% end %>
 			&nbsp; &nbsp;
-			<%= link_to "http://www.twitter.com" do %>
+			<%= link_to "http://www.twitter.com/refout" do %>
 				<i class="fa fa-twitter fa-lg link-social" style="font-size: 24px;"></i>
 			<% end %>
 			&nbsp; &nbsp;
@@ -30,16 +30,26 @@
 <script>
 
 $('a#submitnew').click(function() {
-    $('a#submitnew').popover({
-      html: true,
-      trigger: 'manual',
-      placement: 'top',
-      content: function() {
-      	return $('#popover_content_wrapper').html();
-    	},
-      title: 'Add a Company'
+  $('a#submitnew').popover({
+    html: true,
+    trigger: 'manual',
+    placement: 'top',
+    content: function() {
+    	return $('#popover_content_wrapper').html();
+    },
+    title: 'Submit a New Company or Data'
   });
   $('a#submitnew').popover("show");
+});
+
+$('body').on('click', function (e) {
+  $('[data-toggle="popover"]').each(function () {
+  	//the 'is' for buttons that trigger popups
+  	//the 'has' for icons within a button that triggers a popup
+    if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+    }
+  });
 });
 
 </script>
