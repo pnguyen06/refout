@@ -41,7 +41,7 @@
       <div id="headhunters" class="transitions-enabled">
         <% @headhunters.each do |headhunter| %>
           <div class="box panel panel-default">
-            <%= link_to image_tag(headhunter.image.url(:medium), :style => "height: 173px;"), headhunter %>
+            <%= link_to image_tag(headhunter.image.url(:medium)), headhunter %>
             <div class="panel-body">
               <p><strong><small><%= headhunter.CompanyName %></small></strong></p>
               <p style="line-height: 0"><small><%= link_to headhunter.CompanyWebsite, "http://#{headhunter.CompanyWebsite}", :class => "link-dark-gray" %></small> </p>         
