@@ -15,10 +15,17 @@
 	width: 75%;
 }
 
+.recruiterPic {
+	height: 113px;
+}
+
 @media (max-width: 767px) {
   .box-recruiters {
     width: 100px;
     margin: 3px;
     font-size: 10px;
+  }
+  .recruiterPic {
+  	height: 75px;
   }
 }
