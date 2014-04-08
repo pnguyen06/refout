@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140228014656) do
+ActiveRecord::Schema.define(version: 20140408022415) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +30,32 @@ ActiveRecord::Schema.define(version: 20140228014656) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "banks", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "email"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "youtube"
+    t.string   "size"
+    t.text     "geography"
+    t.text     "industries"
+    t.text     "products"
+    t.integer  "founded"
+    t.text     "internship"
+    t.text     "diversity"
+    t.text     "underclass"
+    t.text     "charity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "website"
+  end
 
   create_table "headhunters", force: true do |t|
     t.string   "CompanyName"

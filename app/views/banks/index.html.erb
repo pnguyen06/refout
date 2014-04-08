@@ -1,0 +1,61 @@
+<div class="container">
+
+<h1>Listing banks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Email</th>
+      <th>Facebook</th>
+      <th>Twitter</th>
+      <th>Linkedin</th>
+      <th>Youtube</th>
+      <th>Size</th>
+      <th>Geography</th>
+      <th>Industries</th>
+      <th>Products</th>
+      <th>Founded</th>
+      <th>Internship</th>
+      <th>Diversity</th>
+      <th>Underclass</th>
+      <th>Charity</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @banks.each do |bank| %>
+      <tr>
+        <td><%= bank.name %></td>
+        <td><%= bank.description %></td>
+        <td><%= bank.email %></td>
+        <td><%= bank.facebook %></td>
+        <td><%= bank.twitter %></td>
+        <td><%= bank.linkedin %></td>
+        <td><%= bank.youtube %></td>
+        <td><%= bank.size %></td>
+        <td><%= bank.geography %></td>
+        <td><%= bank.industries %></td>
+        <td><%= bank.products %></td>
+        <td><%= bank.founded %></td>
+        <td><%= bank.internship %></td>
+        <td><%= bank.diversity %></td>
+        <td><%= bank.underclass %></td>
+        <td><%= bank.charity %></td>
+        <td><%= link_to 'Show', bank %></td>
+        <td><%= link_to 'Edit', edit_bank_path(bank) %></td>
+        <td><%= link_to 'Destroy', bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bank', new_bank_path %>
+
+</div>

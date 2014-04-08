@@ -1,0 +1,85 @@
+<%= form_for @bank, html: { multipart: true } do |f| %>
+  <% if @bank.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bank.errors.count, "error") %> prohibited this bank from being saved:</h2>
+
+      <ul>
+      <% @bank.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :facebook %><br>
+    <%= f.text_field :facebook, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :twitter %><br>
+    <%= f.text_field :twitter, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :linkedin %><br>
+    <%= f.text_field :linkedin, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :youtube %><br>
+    <%= f.text_field :youtube, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :size %><br>
+    <%= f.text_field :size, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :geography %><br>
+    <%= f.text_area :geography, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :industries %><br>
+    <%= f.text_area :industries, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :products %><br>
+    <%= f.text_area :products, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :founded %><br>
+    <%= f.number_field :founded, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :internship %><br>
+    <%= f.text_area :internship, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :diversity %><br>
+    <%= f.text_area :diversity, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :underclass %><br>
+    <%= f.text_area :underclass, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :charity %><br>
+    <%= f.text_area :charity, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

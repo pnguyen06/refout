@@ -1,4 +1,6 @@
 Refout::Application.routes.draw do
+  resources :banks
+
   resources :recruiters
 
   resources :headhunters
