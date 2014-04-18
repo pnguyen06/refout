@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140408022415) do
+ActiveRecord::Schema.define(version: 20140418012454) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -40,10 +40,6 @@ ActiveRecord::Schema.define(version: 20140408022415) do
     t.string   "linkedin"
     t.string   "youtube"
     t.string   "size"
-    t.text     "geography"
-    t.text     "industries"
-    t.text     "products"
-    t.integer  "founded"
     t.text     "internship"
     t.text     "diversity"
     t.text     "underclass"
