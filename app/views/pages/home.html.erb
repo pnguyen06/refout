@@ -1,11 +1,27 @@
-<div class="jumbotron main_jumbo">
-	<div class="container text-left intro_text center">
-		<p style="font-size: 60px; line-height: 70px;">RECRUIT</p>
-		<p style="font-size: 30px; line-height: 0px;">LIKE A</p>
-		<p style="font-size: 80px; line-height: 80px;">CHIMP</p>
-		<p style="font-size: 14px;">FINANCE INDUSTRY RECRUITING <br />
-		SO EASY A MONKEY COULD DO IT.</p>
-		<p style="font-size: 14px; color: #5a5a5a;">Ref Out is the best source for headhunter<br />
-		profiles to help find your next job.
+<!-- CAROUSEL -->
+<div class="carousel slide" style="top: -73px; z-index: -10;">
+	<div class="carousel-inner">
+		<div class="item bg bg1 active">
+			<div class="container">
+				<div class="carousel-caption">
+					<%= image_tag "logo-1000px.png", :size => "500x131", :class => "img-responsive", :style => "margin: 0 auto;" %>
+					<h4>RECRUIT LIKE A CHIMP</h4>
+					<hr width="10%" style="margin-top:50px; margin-bottom: 50px;">
+					<h3 style="line-height: 1.4;">
+						Finance industry recruiting so easy a monkey could do it.
+					</h3>
+					<h3 style="line-height: 1.4;">
+						The best source for headhunter profiles to help find your next job.
+				</h3>
+				<p><small><%= link_to "Learn more", "#intro", :style => "color: #fff;" %></small></p>
+         <%= link_to "#intro", :style => "color: #fff;" do %>
+            <span class="fa fa-hand-o-down" style="font-size: 2em;"></span>
+          <% end %>
+				</div>
+			</div>
+		</div>
 	</div>
+</div>
+<div class="container" id="intro">
+
 </div>
