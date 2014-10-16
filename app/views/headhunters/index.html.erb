@@ -48,11 +48,11 @@
               <% if current_user.try(:admin?) %>
                 <div class="actions">
                   <%= link_to edit_headhunter_path(headhunter) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
+                    <span class="fa fa-edit"></span>
                     Edit
                   <% end %>
                   <%= link_to headhunter, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
+                    <span class="fa fa-trash"></span>
                     Delete
                   <% end %>
                 </div>

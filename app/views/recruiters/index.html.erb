@@ -18,13 +18,13 @@
         <td><%= recruiter.updated_at.strftime("%m/%d/%Y") %></td>       
         <td>
           <%= link_to edit_recruiter_path(recruiter) do %>
-            <span class="glyphicon glyphicon-edit"></span>
+            <span class="fa fa-edit"></span>
             Edit
           <% end %>
         </td>
         <td>
           <%= link_to recruiter, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <span class="glyphicon glyphicon-trash"></span>
+            <span class="fa fa-trash"></span>
             Delete
           <% end %>
         </td>
