@@ -21,6 +21,21 @@ $btn-primary-bg: #5a5a5a;
   border-top: 2px solid #71c6c1;
 }
 
+/* Front Navbar */
+
+.navbar-front {
+  border-top: 2px solid #71c6c1;
+  background-color: none;
+}
+
+.navbar-nav-front > li > a {
+  color: #fff;
+}
+
+.navbar-nav-front > li > a:hover {
+  color: #71c6c1;
+  background-color: #000;
+}
 
 /* Sticky footer styles */
 
