@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 link-dark-gray">
+    <%= link_to 'Back', banks_path, :class => "link-dark-gray" %>
+    <% if current_user.try(:admin?) %>
+       | 
+      <%= link_to edit_bank_path(@bank) do %>
+        <span class="fa fa-edit"></span>
+        Edit
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-2">
+            <%= image_tag @bank.image.url(:medium), class: "img-thumbnail" %>
+          </div>
+          <div class="col-md-10">
+            <h2><%= @bank.name %></h2>
+            <small><%= @bank.description %></small>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body right" style="background-color: #5a5a5a;">
+        <%= link_to @bank.website, "http://#{@bank.website}", class: "link-gray" %>
+        <% if @bank.email == "None" %>
+
+        <% else %>
+          &nbsp;
+          <%= mail_to @bank.email do %>
+            <i class="fa fa-envelope fa-lg link-gray"></i>
+          <% end %>
+        <% end %>
+        <% if @bank.linkedin == "None" %>
+
+        <% else %>
+          &nbsp;
+          <%= link_to "http://#{@bank.linkedin}" do %>
+            <i class="fa fa-linkedin fa-lg link-gray"></i>
+          <% end %>
+        <% end %>
+        <% if @bank.facebook == "None" %>
+
+        <% else %>
+          &nbsp;
+          <%= link_to "http://#{@bank.facebook}" do %>
+            <i class="fa fa-facebook fa-lg link-gray"></i>
+          <% end %>
+        <% end %>
+        <% if @bank.twitter == "None" %>
+
+        <% else %>
+          &nbsp;
+          <%= link_to "http://#{@bank.twitter}" do %>
+            <i class="fa fa-twitter fa-lg link-gray"></i>
+          <% end %>
+        <% end %>
+        <% if @bank.youtube == "None" %>
+
+        <% else %>
+          &nbsp;
+          <%= link_to "http://#{@bank.youtube}" do %>
+            <i class="fa fa-youtube fa-lg link-gray"></i>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
