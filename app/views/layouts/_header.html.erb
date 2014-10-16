@@ -8,15 +8,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "ref out", root_path, class: "navbar-brand" %>
+      <%= link_to image_tag("logo-250px.png", :size => "80x50", :style => "margin-top: 0px;"), root_path %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Headhunters", headhunters_path %></li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Headhunters", headhunters_path %></li>
+        <li class="disabled"><%= link_to "Banks", "#" %></li>
+        <li class="disabled"><%= link_to "Resources", "#" %></li>
         <% if user_signed_in? %>
           <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "" %></li>
