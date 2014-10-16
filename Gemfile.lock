@@ -31,8 +31,8 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
-    bcrypt-ruby (3.1.2)
-    bootstrap-sass (3.0.3.0)
+    bcrypt (3.1.7)
+    bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
     builder (3.1.4)
     climate_control (0.0.3)
@@ -46,15 +46,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    devise (3.2.2)
-      bcrypt-ruby (~> 3.0)
+    devise (3.3.0)
+      bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.0.2)
-    font-awesome-rails (4.0.3.1)
+    font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     has_scope (0.5.1)
     hike (1.2.3)
@@ -155,10 +155,10 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk (~> 1.33.0)
-  bootstrap-sass (~> 3.0.3.0)
+  bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
-  devise (~> 3.2.2)
-  font-awesome-rails (~> 4.0.3.1)
+  devise (~> 3.3.0)
+  font-awesome-rails (~> 4.2.0)
   has_scope (~> 0.5.1)
   jbuilder (~> 1.2)
   jquery-rails

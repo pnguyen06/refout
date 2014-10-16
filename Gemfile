@@ -10,14 +10,14 @@ gem 'jquery-rails' # Use jquery as the JavaScript library
 gem 'turbolinks' # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2' # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'devise', '~> 3.2.2'
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'devise', '~> 3.3.0'
 gem 'paperclip', '~> 3.0'
 gem 'aws-sdk', '~> 1.33.0'
 gem 'masonry-rails', '~> 0.2.1'
 gem 'will_paginate', '~> 3.0'
 gem 'will_paginate-bootstrap'
-gem 'font-awesome-rails', '~> 4.0.3.1'
+gem 'font-awesome-rails', '~> 4.2.0'
 gem 'has_scope', '~> 0.5.1'
 
 group :development, :test do
