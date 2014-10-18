@@ -1,10 +1,12 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<div class="row">
-			<div class="col-md-7">
-				<canvas id="chartPercentSchools" class="img-responsive" style="margin: 0 auto;" width="260" height="260"></canvas>
-        <div id="graph-legend"></div>
+			<div class="col-md-5">
+        <canvas id="chart-area" width="50" height="50"></canvas>
 			</div>
+      <div class="col-md-2">
+        <div id="my-doughnut-legend" class="small" style="margin-left: 15px;"></div>
+      </div>
 			<div class="col-md-5">
         <h4>Schools</h4>
         <hr style="margin-top: -5px;">
@@ -28,68 +30,81 @@
 
 <script>
 /* SCHOOLS */
-  var dataPercentSchools = [{
+  var doughnutData = [
+  {
     value: 9.4,
     color: "rgba(77, 99, 142, 1.0)",
+    highlight: "rgba(77, 99, 142, 0.5)",
     label: "UVa"
-  }, {
+  },
+  {
     value: 7.9,
     color: "rgba(182, 182, 182, 1.0)",
+    highlight: "rgba(182, 182, 182, 0.5)",
     label: "Harvard"
-  }, {
+  },
+  {
     value: 7.2,
     color: "rgba(196, 207, 222, 1.0)",
+    highlight: "rgba(196, 207, 222, 0.5)",
     label: "Cornell"
-  }, {
+  },
+  {
     value: 7.2,
     color: "rgba(149, 163, 189, 1.0)",
+    highlight: "rgba(149, 163, 189, 0.5)",
     label: "Emory"
-  }, {
+  },
+  {
     value: 5.8,
     color: "rgba(138, 33, 61, 1.0)",
+    highlight: "rgba(138, 33, 61, 0.5)",
     label: "NYU"
-  }, {
-    value: 5.0,
+  },
+  {
+    value: 5,
     color: "rgba(86, 129, 127, 1.0)",
+    highlight: "rgba(86, 129, 127, 0.5)",
     label: "Stanford"
-  }, {
+  },
+  {
     value: 57.6,
     color: "rgba(158, 167, 189, 1.0)",
+    highlight: "rgba(158, 167, 189, 0.5)",
     label: "Other"
-  }]
+  }
+  ];
 
-  var optionsPercentSchools = {
-    animation: true
+  window.onload = function(){
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+      responsive : true,
+      animationEasing: "easeOutQuart",
+    });
+
+    var helpers = Chart.helpers;
+    var legendHolder = document.getElementById('my-doughnut-legend')
+    legendHolder.innerHTML = myDoughnut.generateLegend();
+    // Include a html legend template after the module doughnut itself
+    helpers.each(legendHolder.firstChild.childNodes, function(legendNode, index){
+      helpers.addEvent(legendNode, 'mouseover', function(){
+        var activeSegment = myDoughnut.segments[index];
+        activeSegment.save();
+        activeSegment.fillColor = activeSegment.highlightColor;
+        myDoughnut.showTooltip([activeSegment]);
+        activeSegment.restore();
+      });
+    });
+    helpers.addEvent(legendHolder.firstChild, 'mouseout', function(){
+      myDoughnut.draw();
+    });
+    canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
+          
+    myDoughnut.generateLegend();
+    document.getElementById('my-doughnut-legend').innerHTML = myDoughnut.generateLegend();
   };
 
-  var helpers = Chart.helpers;
-  var c = $('#chartPercentSchools');
-  var ct = c.get(0).getContext('2d');
-  var ctx = document.getElementById("chartPercentSchools").getContext("2d");
-
-  chartPercentSchools = new Chart(ct).Doughnut(dataPercentSchools, optionsPercentSchools);
-
-  var legendHolder = document.getElementById('graph-legend');
-  legendHolder.innerHTML = chartPercentSchools.generateLegend();
-
-  // Include a html legend template after the module doughnut itself
-  helpers.each(legendHolder.firstChild.childNodes, function (legendNode, index) {
-    helpers.addEvent(legendNode, 'mouseover', function () {
-      var activeSegment = chartPercentSchools.segments[index];
-      activeSegment.save();
-      chartPercentSchools.showTooltip([activeSegment]);
-      activeSegment.restore();
-    });
-  });
-  helpers.addEvent(legendHolder.firstChild, 'mouseout', function () {
-    chartPercentSchools.draw();
-  });
-
-  document.getElementById('graph-legend').appendChild(legendHolder.firstChild);
-
-
-
-  /* EXITS */
+/* EXITS */
   var dataNumberExits = {
     labels : ["10/14"],
     datasets : [
@@ -140,4 +155,5 @@
   window.myBar = new Chart(ctx).Bar(dataNumberExits, {
       responsive : true
   });
+
 </script>
