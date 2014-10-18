@@ -1,0 +1,143 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-7">
+				<canvas id="chartPercentSchools" class="img-responsive" style="margin: 0 auto;" width="260" height="260"></canvas>
+        <div id="graph-legend"></div>
+			</div>
+			<div class="col-md-5">
+        <h4>Schools</h4>
+        <hr style="margin-top: -5px;">
+        <p style="margin-top: -15px;">Since 2010, the University of Virginia has been the most represented school in Lazard's analyst program with nearly 10% of analysts sourced from, followed by Harvard, Cornell, and Emory.</p>
+        <%= link_to "Learn more", "#" %>
+			</div>
+		</div>
+    <div class="row" style="margin-top: 50px;">
+      <div class="col-md-7">
+        <canvas id="chartNumberExits" class="img-responsive" style="margin: 0 auto;" width="585" height="260"></canvas>
+      </div>
+      <div class="col-md-5">
+        <h4>Exits</h4>
+        <hr style="margin-top: -5px;">
+        <p style="margin-top: -15px;">Since 2010, the highest number of Lazard analysts have gone to Oaktree Capital, likely due to Lazard's strong restructuring group and Oaktree Capital's focus on debt investments.</p>
+        <%= link_to "Learn more", "#" %>
+      </div>
+    </div>
+	</div>
+</div>
+
+<script>
+/* SCHOOLS */
+  var dataPercentSchools = [{
+    value: 9.4,
+    color: "rgba(77, 99, 142, 1.0)",
+    label: "UVa"
+  }, {
+    value: 7.9,
+    color: "rgba(182, 182, 182, 1.0)",
+    label: "Harvard"
+  }, {
+    value: 7.2,
+    color: "rgba(196, 207, 222, 1.0)",
+    label: "Cornell"
+  }, {
+    value: 7.2,
+    color: "rgba(149, 163, 189, 1.0)",
+    label: "Emory"
+  }, {
+    value: 5.8,
+    color: "rgba(138, 33, 61, 1.0)",
+    label: "NYU"
+  }, {
+    value: 5.0,
+    color: "rgba(86, 129, 127, 1.0)",
+    label: "Stanford"
+  }, {
+    value: 57.6,
+    color: "rgba(158, 167, 189, 1.0)",
+    label: "Other"
+  }]
+
+  var optionsPercentSchools = {
+    animation: true
+  };
+
+  var helpers = Chart.helpers;
+  var c = $('#chartPercentSchools');
+  var ct = c.get(0).getContext('2d');
+  var ctx = document.getElementById("chartPercentSchools").getContext("2d");
+
+  chartPercentSchools = new Chart(ct).Doughnut(dataPercentSchools, optionsPercentSchools);
+
+  var legendHolder = document.getElementById('graph-legend');
+  legendHolder.innerHTML = chartPercentSchools.generateLegend();
+
+  // Include a html legend template after the module doughnut itself
+  helpers.each(legendHolder.firstChild.childNodes, function (legendNode, index) {
+    helpers.addEvent(legendNode, 'mouseover', function () {
+      var activeSegment = chartPercentSchools.segments[index];
+      activeSegment.save();
+      chartPercentSchools.showTooltip([activeSegment]);
+      activeSegment.restore();
+    });
+  });
+  helpers.addEvent(legendHolder.firstChild, 'mouseout', function () {
+    chartPercentSchools.draw();
+  });
+
+  document.getElementById('graph-legend').appendChild(legendHolder.firstChild);
+
+
+
+  /* EXITS */
+  var dataNumberExits = {
+    labels : ["10/14"],
+    datasets : [
+      {
+        label: "Oaktree Capital",
+        fillColor : "rgba(77, 99, 142, 0.2)",
+        strokeColor : "rgba(77, 99, 142, 0.8)",
+        highlightFill: "rgba(77, 99, 142, 0.5)",
+        highlightStroke: "rgba(77, 99, 142, 1)",
+        data : [3]
+      },
+      {
+        label: "Metalmark Capital",
+        fillColor : "rgba(182, 182, 182, 0.2)",
+        strokeColor : "rgba(182, 182, 182, 0.8)",
+        highlightFill : "rgba(182, 182, 182, 0.5)",
+        highlightStroke : "rgba(182, 182, 182, 1)",
+        data : [2]
+      },
+      {
+        label: "KKR",
+        fillColor : "rgba(196, 207, 222, 0.2)",
+        strokeColor : "rgba(196, 207, 222, 0.8)",
+        highlightFill : "rgba(196, 207, 222, 0.5)",
+        highlightStroke : "rgba(196, 207, 222, 1)",
+        data : [2]
+      },
+      {
+        label: "Casablanca Capital",
+        fillColor : "rgba(149, 163, 189, 0.2)",
+        strokeColor : "rgba(149, 163, 189, 0.8)",
+        highlightFill : "rgba(149, 163, 189, 0.5)",
+        highlightStroke : "rgba(149, 163, 189, 1)",
+        data : [2]
+      },
+      {
+        label: "Anchorage Capital",
+        fillColor : "rgba(138, 33, 61, 0.2)",
+        strokeColor : "rgba(138, 33, 61, 0.8)",
+        highlightFill : "rgba(138, 33, 61, 0.5)",
+        highlightStroke : "rgba(138, 33, 61, 1)",
+        data : [2]
+      }
+    ]
+
+  }
+  var ctx = document.getElementById("chartNumberExits").getContext("2d");
+  window.myBar = new Chart(ctx).Bar(dataNumberExits, {
+      responsive : true
+  });
+</script>

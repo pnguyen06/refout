@@ -3,7 +3,7 @@
 
   <%= render 'layouts/bankheader' %>
   <div class="row">
-    <div class="col-md-3 col-md-offset-1">
+    <div class="col-md-2 col-md-offset-1">
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default">
@@ -14,8 +14,8 @@
         </div>
       </div>
     </div>
-    <div class="col-md-7">
-      <%= render 'layouts/banklanding' %>
+    <div class="col-md-8">
+      <%= render 'layouts/' + 'banklanding/' + @bank.shortname %>
     </div>
   </div>
 </div>
