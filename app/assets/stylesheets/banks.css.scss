@@ -1,11 +1,11 @@
 .doughnut-legend li span {
   display: block;
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   border-radius: 7px;
   float: left;
-  margin-top: 4px;
-  margin-right: 8px;
+  margin-right: 4px;
+  margin-left: 10px;
 }
 
 .doughnut-legend {
@@ -17,12 +17,11 @@
 }
 
 .doughnut-legend li {
-  margin-bottom : 4px;
+  display: inline-block;
 }
 
 .doughnut-legend li:first-letter {
   text-transform: capitalize;
 }
-
 
 
