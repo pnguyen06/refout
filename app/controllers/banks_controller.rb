@@ -6,7 +6,6 @@ class BanksController < ApplicationController
     @banks = Bank.all
   end
 
- 
   def show
   end
 
@@ -38,6 +37,10 @@ class BanksController < ApplicationController
   def destroy
     @bank.destroy
     redirect_to banks_url
+  end
+
+  def offices
+    @bank = Bank.find(params[:id])
   end
 
   private

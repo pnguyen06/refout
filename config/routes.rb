@@ -1,7 +1,9 @@
 Refout::Application.routes.draw do
   resources :offices
 
-  resources :banks
+  resources :banks do
+    get :offices, :on => :member
+  end
 
   resources :recruiters
 
