@@ -15,7 +15,14 @@
       </div>
     </div>
     <div class="col-md-8">
-    	To Come
+    	<div class="panel panel-default">
+				<div class="panel-body">
+					<h5><strong>OFFICES</strong></h5>
+					<% @offices.each do |office| %>
+						<%= office.name %>
+					<% end %>
+    		</div>
+    	</div>
     </div>
   </div>
 </div>

@@ -41,6 +41,7 @@ class BanksController < ApplicationController
 
   def offices
     @bank = Bank.find(params[:id])
+    @offices = @bank.offices  
   end
 
   private
