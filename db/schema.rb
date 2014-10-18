@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141018142815) do
+ActiveRecord::Schema.define(version: 20141018222736) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -84,6 +84,21 @@ ActiveRecord::Schema.define(version: 20141018142815) do
     t.string   "CompanyTwitter"
     t.text     "CompanyJobs"
     t.boolean  "mega"
+  end
+
+  create_table "offices", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "bank_id"
+    t.string   "street"
+    t.string   "city"
+    t.string   "phone"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "recruiters", force: true do |t|
