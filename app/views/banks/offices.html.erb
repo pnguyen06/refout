@@ -19,7 +19,7 @@
 				<div class="panel-body">
 					<h5><strong>OFFICES</strong></h5>
 					<% @offices.each do |office| %>
-						<%= office.name %>
+						<%= link_to office.name, office %>
 					<% end %>
     		</div>
     	</div>

@@ -10,6 +10,7 @@ class OfficesController < ApplicationController
 
   def show
     Office.joins(:office, :bank).where("office.bank_id = bank.id")
+    @bank = Bank.find(params[:id])
   end
 
   def new
