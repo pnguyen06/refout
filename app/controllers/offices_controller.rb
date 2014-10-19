@@ -10,7 +10,8 @@ class OfficesController < ApplicationController
 
   def show
     Office.joins(:office, :bank).where("office.bank_id = bank.id")
-    @bank = Bank.find(params[:id])
+    @office = Office.find(params[:id])
+    @bank = Bank.find(@office.bank_id)
   end
 
   def new
@@ -51,7 +52,7 @@ class OfficesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def office_params
-      params.require(:office).permit(:name, :description, :bank_id, :street, :city, :phone)
+      params.require(:office).permit(:name, :description, :bank_id, :street, :city, :phone, :image)
     end
 
     def verify_is_admin

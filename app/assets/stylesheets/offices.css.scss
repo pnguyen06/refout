@@ -1,0 +1,27 @@
+// Place all the styles related to the offices controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#offices {
+	margin: 0 auto;
+}
+
+.box-offices {
+	margin: 5px;
+	width: 150px;
+	height: 172px;
+}
+
+.box-offices img {
+	width: 75%;
+}
+
+
+@media (max-width: 767px) {
+  .box-offices {
+    width: 100px;
+    height: 124px;
+    margin: 3px;
+    font-size: 10px;
+  }
+}
