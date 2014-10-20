@@ -17,37 +17,17 @@
     <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-body">
-<p>
-  <strong>Name:</strong>
-  <%= @office.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @office.description %>
-</p>
-
-<p>
-  <strong>Bank:</strong>
-  <%= @office.bank_id %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @office.street %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @office.city %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @office.phone %>
-</p>
-
-</div>
+          <h4><%= @office.name %></h4>
+          <hr style="margin-top: -5px;">
+          <small>
+            <%= @office.street %><br />
+            <%= @office.city %><br />
+            <%= @office.phone %><br />
+          </small>
+          <br />
+          <p><%= @office.description %></p>
+          
+        </div>
       </div>
     </div>
   </div>
