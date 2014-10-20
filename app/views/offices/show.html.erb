@@ -15,18 +15,26 @@
       </div>
     </div>
     <div class="col-md-8">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <h4><%= @office.name %></h4>
-          <hr style="margin-top: -5px;">
-          <small>
-            <%= @office.street %><br />
-            <%= @office.city %><br />
-            <%= @office.phone %><br />
-          </small>
-          <br />
-          <p><%= @office.description %></p>
-          
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4><%= @office.name %></h4>
+              <hr style="margin-top: -5px;">
+              <small>
+                <%= @office.street %><br />
+                <%= @office.city %><br />
+                <%= @office.phone %><br />
+              </small>
+              <br />
+              <p><%= @office.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'layouts/' + 'banklanding/' + @bank.shortname %>
         </div>
       </div>
     </div>
