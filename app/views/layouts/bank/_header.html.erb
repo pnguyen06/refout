@@ -1,17 +1,5 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-1 link-dark-gray">
-    <%= link_to 'Back', banks_path, :class => "link-dark-gray" %>
-    <% if current_user.try(:admin?) %>
-       | 
-      <%= link_to edit_bank_path(@bank) do %>
-        <span class="fa fa-edit"></span>
-        Edit
-      <% end %>
-    <% end %>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-12 col-md-offset-0">
     <div class="panel panel-default">
       <div class="panel-body">
         <div class="row">
