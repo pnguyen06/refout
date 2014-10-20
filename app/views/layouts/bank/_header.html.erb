@@ -16,7 +16,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-2">
-            <%= image_tag @bank.image.url(:medium), class: "img-thumbnail" %>
+            <%= link_to (image_tag @bank.image.url(:medium), class: "img-thumbnail"), @bank %>
           </div>
           <div class="col-md-10">
             <h2><%= @bank.name %></h2>

@@ -1,0 +1,143 @@
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-md-7">
+        <canvas id="chart-area" class="img-responsive" style="margin: 0 auto;"  width="260" height="260"></canvas>
+			</div>
+			<div class="col-md-5">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Schools</h4>
+            <hr style="margin-top: -5px;">
+            <p style="margin-top: -15px;">Since 2010, the University of Illinois has been the most represented school in the Chicago office, followed by other Big 10 schools such as Northwestern and Notre Dame.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div id="my-doughnut-legend" class="small"></div>
+          </div>
+        </div>
+			</div>
+		</div>
+    <hr style="margin-top: 25px; margin-bottom: 25px;">
+    <div class="row">
+      <div class="col-md-7">
+        <table class="table table-condensed table-striped small">
+          <thead>
+            <tr>
+              <th>Firm</th>
+              <th class="center">Number of Exits</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Oaktree Capital</td>
+              <td class="center">1</td>
+            </tr>
+            <tr>
+              <td>Thoma Bravo</td>
+              <td class="center">1</td>
+            </tr>
+            <tr>
+              <td>GTCR</td>
+              <td class="center">1</td>
+            </tr>
+            <tr>
+              <td>Onex</td>
+              <td class="center">1</td>
+            </tr>
+            <tr>
+              <td>Black Diamond Capital</td>
+              <td class="center">1</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-5">
+        <h4>Exits</h4>
+        <hr style="margin-top: -5px;">
+        <p style="margin-top: -15px;">Since 2010, analysts from Lazard's Chicago office have gone to credit funds as well as Chicago-based private equity firms.
+        </p>
+      </div>
+    </div>
+	</div>
+</div>
+
+<script>
+/* SCHOOLS */
+  var doughnutData = [
+  {
+    value: 29.4,
+    color: "rgba(77, 99, 142, 1.0)",
+    highlight: "rgba(77, 99, 142, 0.5)",
+    label: "UIUC"
+  },
+  {
+    value: 17.6,
+    color: "rgba(182, 182, 182, 1.0)",
+    highlight: "rgba(182, 182, 182, 0.5)",
+    label: "Northwestern"
+  },
+  {
+    value: 17.6,
+    color: "rgba(196, 207, 222, 1.0)",
+    highlight: "rgba(196, 207, 222, 0.5)",
+    label: "Notre Dame"
+  },
+  {
+    value: 35.3,
+    color: "rgba(149, 163, 189, 1.0)",
+    highlight: "rgba(149, 163, 189, 0.5)",
+    label: "Other"
+  }/*,
+  {
+    value: 5.8,
+    color: "rgba(138, 33, 61, 1.0)",
+    highlight: "rgba(138, 33, 61, 0.5)",
+    label: "NYU"
+  },
+  {
+    value: 5,
+    color: "rgba(86, 129, 127, 1.0)",
+    highlight: "rgba(86, 129, 127, 0.5)",
+    label: "Stanford"
+  },
+  {
+    value: 57.6,
+    color: "rgba(158, 167, 189, 1.0)",
+    highlight: "rgba(158, 167, 189, 0.5)",
+    label: "Other"
+  }*/
+  ];
+
+  //window.onload = function(){
+    var ctx = document.getElementById("chart-area").getContext("2d");
+    window.myDoughnut = new Chart(ctx).Doughnut(doughnutData, {
+      //responsive : true,
+      animationEasing: "easeOutQuart"
+    });
+
+    var helpers = Chart.helpers;
+    var legendHolder = document.getElementById('my-doughnut-legend')
+    legendHolder.innerHTML = myDoughnut.generateLegend();
+    // Include a html legend template after the module doughnut itself
+    helpers.each(legendHolder.firstChild.childNodes, function(legendNode, index){
+      helpers.addEvent(legendNode, 'mouseover', function(){
+        var activeSegment = myDoughnut.segments[index];
+        activeSegment.save();
+        activeSegment.fillColor = activeSegment.highlightColor;
+        myDoughnut.showTooltip([activeSegment]);
+        activeSegment.restore();
+      });
+    });
+    helpers.addEvent(legendHolder.firstChild, 'mouseout', function(){
+      myDoughnut.draw();
+    });
+    canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
+          
+    myDoughnut.generateLegend();
+    document.getElementById('my-doughnut-legend').innerHTML = myDoughnut.generateLegend();
+  //};
+
+</script>
