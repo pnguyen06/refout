@@ -19,7 +19,7 @@
             <%= link_to (image_tag @bank.image.url(:medium), class: "img-thumbnail"), @bank %>
           </div>
           <div class="col-md-10">
-            <h2><%= @bank.name %></h2>
+            <h2><%= link_to @bank.name, @bank %></h2>
             <small><%= @bank.description %></small>
           </div>
         </div>

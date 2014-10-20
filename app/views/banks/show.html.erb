@@ -15,7 +15,34 @@
       </div>
     </div>
     <div class="col-md-8">
-      <%= render 'layouts/bank/landing/' + @bank.shortname %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h4>Basic Information</h4>
+              <hr style="margin-top: -5px;">
+              <small>
+                <div class="row">
+                  <div class="col-md-6">
+                    <b>Revenue</b> <%= @bank.revenue %><br />
+                    <b>Stock Symbol</b> <%= @bank.stock %><br />
+                    <b>Employee Count</b> <%= @bank.employees %>
+                  </div>
+                  <div class="col-md-6">
+                    <b>CEO</b> <%= @bank.ceo %><br />
+                    <b>Headquarters</b> <%= @bank.headquarters %>
+                  </div>
+                </div>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <%= render 'layouts/bank/landing/' + @bank.shortname %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

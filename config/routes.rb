@@ -1,8 +1,11 @@
 Refout::Application.routes.draw do
+  resources :groups
+
   resources :offices
 
   resources :banks do
     get :offices, :on => :member
+    get :groups, :on => :member
   end
 
   resources :recruiters

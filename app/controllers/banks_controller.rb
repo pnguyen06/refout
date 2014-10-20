@@ -44,6 +44,11 @@ class BanksController < ApplicationController
     @offices = @bank.offices  
   end
 
+  def groups
+    @bank = Bank.find(params[:id])
+    @groups = @bank.groups  
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bank
@@ -52,6 +57,6 @@ class BanksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bank_params
-      params.require(:bank).permit(:name, :shortname, :image, :description, :website, :email, :facebook, :twitter, :linkedin, :youtube, :size, :geography, :industries, :products, :founded, :internship, :diversity, :underclass, :charity)
+      params.require(:bank).permit(:name, :shortname, :image, :description, :website, :email, :facebook, :twitter, :linkedin, :youtube, :size, :geography, :industries, :products, :founded, :internship, :diversity, :underclass, :charity, :revenue, :stock, :employees, :ceo, :headquarters)
     end
 end

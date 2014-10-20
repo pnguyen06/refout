@@ -14,7 +14,7 @@
     <% @offices.each do |office| %>
       <tr>
         <td><%= link_to office.name, office %></td>
-        <td><%= office.bank.try(:shortname).blank? ? 'N/A' : office.bank.shortname %></td>
+        <td><%= link_to office.bank.try(:shortname).blank? ? 'N/A' : office.bank.shortname, office.bank %></td>
         <td><%= office.updated_at.strftime("%m/%d/%Y") %></td>       
         <td>
           <%= link_to edit_office_path(office) do %>

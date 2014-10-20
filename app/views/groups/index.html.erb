@@ -1,0 +1,39 @@
+<div class="container">
+<h1>List of Groups</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Bank</th>
+      <th>Last Updated</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= link_to group.name, group %></td>
+        <td><%= link_to group.bank.try(:shortname).blank? ? 'N/A' : group.bank.shortname, group.bank %></td>
+        <td><%= group.updated_at.strftime("%m/%d/%Y") %></td>       
+        <td>
+          <%= link_to edit_group_path(group) do %>
+            <span class="fa fa-edit"></span>
+            Edit
+          <% end %>
+        </td>
+        <td>
+          <%= link_to group, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="fa fa-trash"></span>
+            Delete
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>
+</div>
