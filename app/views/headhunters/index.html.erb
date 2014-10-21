@@ -1,4 +1,7 @@
 <div class="container">
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'New Headhunter', new_headhunter_path %>
+  <% end %>
   <div class="row">
     <div class="col-md-3">
       <div class="panel panel-default" style="margin-top: 5px;">
@@ -43,7 +46,7 @@
           <div class="box panel panel-default">
             <%= link_to image_tag(headhunter.image.url(:medium)), headhunter %>
             <div class="panel-body">
-              <p><strong><small><%= headhunter.CompanyName %></small></strong></p>
+              <p><strong><small><%= link_to headhunter.CompanyName, headhunter,  :class => "link-dark-gray" %></small></strong></p>
               <p style="line-height: 0"><small><%= link_to headhunter.CompanyWebsite, "http://#{headhunter.CompanyWebsite}", :class => "link-dark-gray" %></small> </p>         
               <% if current_user.try(:admin?) %>
                 <div class="actions">
@@ -59,13 +62,7 @@
               <% end %>
             </div>
           </div>
-        <% end %>
-        <!--
-        <br />
-        <% if current_user.try(:admin?) %>
-          <%= link_to 'New Headhunter', new_headhunter_path %>
-        <% end %>
-      -->
+        <% end %>        
       </div>
       <div class="center">
         <%= will_paginate @pages, renderer: BootstrapPagination::Rails %>

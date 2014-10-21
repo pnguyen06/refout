@@ -1,53 +1,46 @@
 <div class="container">
-
-<h1>Listing banks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Email</th>
-      <th>Facebook</th>
-      <th>Twitter</th>
-      <th>Linkedin</th>
-      <th>Youtube</th>
-      <th>Size</th>
-      <th>Internship</th>
-      <th>Diversity</th>
-      <th>Underclass</th>
-      <th>Charity</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @banks.each do |bank| %>
-      <tr>
-        <td><%= bank.name %></td>
-        <td><%= bank.description %></td>
-        <td><%= bank.email %></td>
-        <td><%= bank.facebook %></td>
-        <td><%= bank.twitter %></td>
-        <td><%= bank.linkedin %></td>
-        <td><%= bank.youtube %></td>
-        <td><%= bank.size %></td>
-        <td><%= bank.internship %></td>
-        <td><%= bank.diversity %></td>
-        <td><%= bank.underclass %></td>
-        <td><%= bank.charity %></td>
-        <td><%= link_to 'Show', bank %></td>
-        <td><%= link_to 'Edit', edit_bank_path(bank) %></td>
-        <td><%= link_to 'Destroy', bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Bank', new_bank_path %>
-
+  <% if current_user.try(:admin?) %>
+    <%= link_to 'New Bank', new_bank_path %>
+  <% end %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default" style="margin-top: 5px;">
+        <div class="panel-body">
+          
+          <form action='' method="get">
+            <h5><strong>SIZE</strong></h5>
+            <%= submit_tag 'Filter', name: nil, class: "btn btn-primary" %>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div id="banks" class="transitions-enabled">
+        <% @banks.each do |bank| %>
+          <div class="box panel panel-default">
+            <%= link_to image_tag(bank.image.url(:medium)), bank %>
+            <div class="panel-body">
+              <p><strong><small><%= link_to bank.name, bank, :class => "link-dark-gray" %></small></strong></p>
+              <p style="line-height: 0"><small><%= link_to bank.website, "http://#{bank.website}", :class => "link-dark-gray" %></small> </p>         
+              <% if current_user.try(:admin?) %>
+                <div class="actions">
+                  <%= link_to edit_bank_path(bank) do %>
+                    <span class="fa fa-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to bank, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="fa fa-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="center">
+        <%= will_paginate @pages, renderer: BootstrapPagination::Rails %>
+      </div>
+    </div>
+  </div>
 </div>

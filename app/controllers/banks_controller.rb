@@ -3,7 +3,7 @@ class BanksController < ApplicationController
 
 
   def index
-    @banks = Bank.all
+    @banks = apply_scopes(Bank.all.order(:name).paginate(:page => params[:page], :per_page => 24))
   end
 
   def show
