@@ -8,10 +8,5 @@ class PagesController < ApplicationController
   def contact
   end
 
-  def resources
-  end
-
-  def analyst_tips
-  end
 
 end

@@ -1,6 +1,9 @@
-<h1>Editing tip</h1>
+<div class="container">
+	<h1>Editing Tip</h1>
 
-<%= render 'form' %>
+	<%= render 'form' %>
 
-<%= link_to 'Show', @tip %> |
-<%= link_to 'Back', tips_path %>
+	<!--<%= link_to 'Show', @tip %> |-->
+	<%= link_to 'Destroy', @tip, method: :delete, data: { confirm: 'Are you sure?' } %> |
+	<%= link_to 'Back', tips_path %>
+</div>

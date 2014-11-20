@@ -1,27 +1,28 @@
-<h1>Listing tips</h1>
+<div class="container">
+  <h1>Tips for Analysts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @tips.each do |tip| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= tip.description %></td>
-        <td><%= link_to 'Show', tip %></td>
-        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @tips.each do |tip| %>
+        <tr>
+          <td>
+            <%= tip.description %>
+            <%= link_to edit_tip_path(tip) do %>
+              <span class="fa fa-edit"></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Tip', new_tip_path %>
+  <br>
+
+  <%= link_to 'New Tip', new_tip_path %>
+</div>
