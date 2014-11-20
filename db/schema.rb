@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141020185932) do
+ActiveRecord::Schema.define(version: 20141120160053) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -134,6 +134,12 @@ ActiveRecord::Schema.define(version: 20141020185932) do
   end
 
   add_index "recruiters", ["headhunter_id"], name: "index_recruiters_on_headhunter_id"
+
+  create_table "tips", force: true do |t|
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -1,4 +1,6 @@
 Refout::Application.routes.draw do
+  resources :tips
+
   resources :groups
 
   resources :offices
@@ -6,6 +8,7 @@ Refout::Application.routes.draw do
   resources :banks do
     get :offices, :on => :member
     get :groups, :on => :member
+    get :schools, :on => :member
   end
 
   resources :recruiters
@@ -17,6 +20,7 @@ Refout::Application.routes.draw do
   get "about" => "pages#about"
   get "contact" => "pages#contact"
   get "legal" => "pages#legal"
+  get "analyst_tips" => "pages#analyst_tips"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
