@@ -1,39 +1,41 @@
 <div class="container">
+<% if current_user.try(:admin?) %>
+  <%= link_to new_office_path do %>
+    <span class="fa fa-plus-circle"></span>
+    New Office
+  <% end %>
+<% end %>
 <h1>List of Offices</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Bank</th>
-      <th>Last Updated</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @offices.each do |office| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= link_to office.name, office %></td>
-        <td><%= link_to office.bank.try(:shortname).blank? ? 'N/A' : office.bank.shortname, office.bank %></td>
-        <td><%= office.updated_at.strftime("%m/%d/%Y") %></td>       
-        <td>
-          <%= link_to edit_office_path(office) do %>
-            <span class="fa fa-edit"></span>
-            Edit
-          <% end %>
-        </td>
-        <td>
-          <%= link_to office, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <span class="fa fa-trash"></span>
-            Delete
-          <% end %>
-        </td>
+        <th>Name</th>
+        <th>Bank</th>
+        <th>Last Updated</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Office', new_office_path %>
+    <tbody>
+      <% @offices.each do |office| %>
+        <tr>
+          <td><%= link_to office.name, office %></td>
+          <td><%= link_to office.bank.try(:shortname).blank? ? 'N/A' : office.bank.shortname, office.bank %></td>
+          <td><%= office.updated_at.strftime("%m/%d/%Y") %></td>       
+          <td>
+            <%= link_to edit_office_path(office) do %>
+              <span class="fa fa-edit"></span>
+              Edit
+            <% end %>
+          </td>
+          <td>
+            <%= link_to office, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="fa fa-trash"></span>
+              Delete
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
