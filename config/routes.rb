@@ -19,6 +19,11 @@ Refout::Application.routes.draw do
 
   resources :headhunters
 
+  scope '/resources' do
+    resources :tips
+  end
+
+
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
