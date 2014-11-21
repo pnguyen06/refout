@@ -6,42 +6,48 @@
     </h4>
   </div>
 </div>
-<div class="container">
-  <% if current_user.try(:admin?) %>
-    <%= link_to new_tip_path do %>
-      <span class="fa fa-plus-circle"></span>
-      New Tip
-    <% end %>
-  <% end %>
-  <div class="panel panel-default">
-    <div class="panel-body">
+<div style="background-color: #fff; background-width: 100%; margin-top: -30px;">
+  <div class="container">
+    <div style="margin-top: 30px;">
       Below is a collection of tips that will help you during your analyst years.
-      <table class="table table-striped table-condensed" style="margin-top: 30px;">
-        <% @tips.each do |tip| %>
-          <tr>
-            <td class="tips_upvote">
-              <h4>
-                <%= link_to addupvote_tip_path(tip), method: :put do %>
-                  <span class="fa fa-chevron-circle-up"></span>
-                  <br />
-                  <%= tip.upvote %>
-                <% end %>
-              </h4>
-            </td>
-            <td>
-              <h4>
-                <b><%= tip.title.upcase %></b>
-                <% if current_user.try(:admin?) %>
-                  <%= link_to edit_tip_path(tip) do %>
-                    <span class="fa fa-edit"></span>
-                  <% end %>
-                <% end %>
-              </h4>
-              <p style="margin-top: -10px;"><small><%= tip.description %></small></p>
-            </td>
-          </tr>
+      <br /><br />
+    </div>
+    <% if current_user.try(:admin?) %>
+        <%= link_to new_tip_path do %>
+          <span class="fa fa-plus-circle"></span>
+          New Tip
         <% end %>
-      </table>
+      <% end %>
+    <div class="panel panel-default">
+      <div class="panel-body">
+
+        <table class="table table-striped table-condensed" style="margin-top: 30px;">
+          <% @tips.each do |tip| %>
+            <tr>
+              <td class="tips_upvote">
+                <h4>
+                  <%= link_to addupvote_tip_path(tip), method: :put do %>
+                    <span class="fa fa-chevron-circle-up"></span>
+                    <br />
+                    <%= tip.upvote %>
+                  <% end %>
+                </h4>
+              </td>
+              <td>
+                <h4>
+                  <b><%= tip.title.upcase %></b>
+                  <% if current_user.try(:admin?) %>
+                    <%= link_to edit_tip_path(tip) do %>
+                      <span class="fa fa-edit"></span>
+                    <% end %>
+                  <% end %>
+                </h4>
+                <p style="margin-top: -10px;"><small><%= tip.description %></small></p>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
     </div>
   </div>
 </div>
