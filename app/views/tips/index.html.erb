@@ -7,6 +7,12 @@
   </div>
 </div>
 <div class="container">
+  <% if current_user.try(:admin?) %>
+    <%= link_to new_tip_path do %>
+      <span class="fa fa-plus-circle"></span>
+      New Tip
+    <% end %>
+  <% end %>
   <div class="panel panel-default">
     <div class="panel-body">
       Below is a collection of tips that will help you during your analyst years.
@@ -38,11 +44,4 @@
       </table>
     </div>
   </div>
-
-  <% if current_user.try(:admin?) %>
-    <%= link_to new_tip_path do %>
-      <span class="fa fa-plus-circle"></span>
-      New Tip
-    <% end %>
-  <% end %>
 </div>
