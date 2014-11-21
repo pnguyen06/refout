@@ -1,5 +1,9 @@
 Refout::Application.routes.draw do
-  resources :tips
+  resources :tips do
+    member do
+      put "addupvote", to: "tips#addupvote"
+    end
+  end
 
   resources :groups
 
@@ -19,6 +23,7 @@ Refout::Application.routes.draw do
   root "pages#home"
   get "about" => "pages#about"
   get "contact" => "pages#contact"
+  get "resources" => "pages#resources"
   get "legal" => "pages#legal"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

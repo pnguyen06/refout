@@ -32,3 +32,20 @@
 .nav_pages > li > a:hover {
 	background-color: #fff;
 }
+
+.tips_jumbo {
+	background: url('resources/tips_banner.jpg') center;
+	height: 250px;
+  color: #fff;
+  text-align: right;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  margin-top: -20px;
+}
+
+.tips_upvote {
+	text-align: center;
+}
+
+.tips_upvote a:hover {
+	text-decoration: none;
+}

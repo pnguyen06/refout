@@ -1,28 +1,48 @@
+<div class="jumbotron tips_jumbo">
+  <div class="container">
+    <h2>Tips for Analysts</h2>
+    <h4>
+      The best way to survive and thrive your hellish analyst years
+    </h4>
+  </div>
+</div>
 <div class="container">
-  <h1>Tips for Analysts</h1>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Below is a collection of tips that will help you during your analyst years.
+      <table class="table table-striped" style="margin-top: 30px;">
+        <% @tips.each do |tip| %>
+          <tr>
+            <td class="tips_upvote">
+              <h4>
+                <%= link_to addupvote_tip_path(tip), method: :put do %>
+                  <span class="fa fa-chevron-circle-up"></span>
+                  <br />
+                  <%= tip.upvote %>&nbsp;
+                <% end %>
+              </h4>
+            </td>
+            <td>
+              <h4>
+                <b><%= tip.title.upcase %></b>
+                <% if user_signed_in? %>
+                  <%= link_to edit_tip_path(tip) do %>
+                    <span class="fa fa-edit"></span>
+                  <% end %>
+                <% end %>
+              </h4>
+              <small><%= tip.description %></small>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
 
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @tips.each do |tip| %>
-        <tr>
-          <td>
-            <%= tip.description %>
-            <%= link_to edit_tip_path(tip) do %>
-              <span class="fa fa-edit"></span>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'New Tip', new_tip_path %>
+  <% if user_signed_in? %>
+    <%= link_to new_tip_path do %>
+      <span class="fa fa-plus-circle"></span>
+      New Tip
+    <% end %>
+  <% end %>
 </div>
