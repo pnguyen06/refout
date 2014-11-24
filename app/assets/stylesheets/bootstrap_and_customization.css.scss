@@ -30,6 +30,10 @@ $btn-primary-bg: #5a5a5a;
   background-color: none;
 }
 
+.navbar-nav > li > a {
+  font-size: 12px;
+}
+
 .navbar-nav-front > li > a {
   color: #fff;
 }
@@ -78,5 +82,17 @@ html, body {
     margin-right: -20px;
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .navbar-front {
+    background-color: white;
+  }
+  .navbar-nav-front > li > a {
+    color: black;
+  }
+  .navbar-toggle {
+    border-color: #dddddd;
+  }
+  .icon-bar {
+    background-color: #888888;
   }
 }
