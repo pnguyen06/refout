@@ -90,10 +90,12 @@
 							<% if @headhunter.mega %><small><p>Mega Funds</p></small><% end %>
 							<br />-->
 							<h5><strong>LEVEL</strong></h5>
-							<% if @headhunter.CompanyUndergrad %><small><p>Undergrad</p></small><% end %>
-							<% if @headhunter.CompanyPreMBA %><small><p>PreMBA</p></small><% end %>
-							<% if @headhunter.CompanyPostMBA %><small><p>PostMBA</p></small><% end %>
-							<% if @headhunter.CompanyExecutive %><small><p>Executive</p></small><% end %>
+							<p><small>
+							<% if @headhunter.CompanyUndergrad %>Undergrad<br /><% end %>
+							<% if @headhunter.CompanyPreMBA %>PreMBA<br /><% end %>
+							<% if @headhunter.CompanyPostMBA %>PostMBA<br /><% end %>
+							<% if @headhunter.CompanyExecutive %>Executive<% end %>
+							</small></p>
 						</div>
 					</div>
 				</div>
@@ -172,7 +174,7 @@
 					<hr style="margin-top: -5px;">
 					<div id="recruiters" class="transitions-enabled">
     				<% @recruiters.each do |recruiter| %>
-    					<div class="box-recruiters center">	          	
+    					<div class="box-recruiters center" style="margin-top: 10px;">	          	
 								<%= link_to( image_tag(recruiter.image.url(:medium), :class => "img-circle"), "#recruiterModal", :class => "recruiterBio", :data => {:toggle => "modal", :description => "#{recruiter.description}", :name => "#{recruiter.name}"}) %>	
 	          		<p style="line-height: 1.0; margin-top: 5px;"><%= recruiter.name %></p>
 	          		<p style="line-height: 0;"><small><%= recruiter.title %></small></p>
