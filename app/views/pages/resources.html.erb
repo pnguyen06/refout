@@ -1,9 +1,16 @@
 <div id="wrap">
-	<div class="container">
-		<div id="resources" class="transitions-enabled">
-        <div class="box-resources panel panel-default">
-        	<%= link_to image_tag("resources/analyst_tips_thumbnail.jpg", :style => "margin-top: 0px;"), "/resources/tips" %>
-        </div>
-      </div>
+	<div class="container" style="background-color: white;">
+		<br />
+    <div class="row">
+    	<div class="col-md-2 center">
+    		<%= link_to image_tag("resources/analyst_tips_thumbnail.jpg", :size => "125x125", :style => "margin-top: 0px;"), "/resources/tips" %>
+    	</div>
+    	<div class="col-md-10">
+    		<h3 style="margin-top: 0px; font-weight: 300;"><%= link_to "Survival Tips for your Analyst Years", "/resources/tips" %></h3>
+    		<p class="serif-type">A collection of the best tips and tricks to help you get through your analyst years, ranked by readers by most helpful.</p>
+    		<small>Curated by The Ref Out Team</small>
+    	</div>
+    </div>
+    <hr />
 	</div>
 </div>
