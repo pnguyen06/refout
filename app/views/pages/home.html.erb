@@ -12,13 +12,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right navbar-nav-front">
-        <li><%= link_to "Headhunters", headhunters_path %></li>
-        <li class="disabled"><%= link_to "Banks", "#" %></li>
-        <li><%= link_to "Resources", resources_path %></li>
+      <ul class="nav navbar-nav navbar-right navbar-nav-front" style="font-weight: bold;">
+        <li><%= link_to "HEADHUNTERS", headhunters_path %></li>
+        <li class="disabled"><%= link_to "BANKS", "#" %></li>
+        <li><%= link_to "RESOURCES", resources_path %></li>
         <% if user_signed_in? %>
-          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
-          <li><%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "" %></li>
+          <li><%= link_to "SETTINGS", edit_user_registration_path %></li>
+          <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete, class: "" %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -34,14 +34,13 @@
 					<%= image_tag "logo-1000px.png", :size => "500x131", :class => "img-responsive", :style => "margin: 0 auto;" %>
 					<h4>RECRUIT LIKE A CHIMP</h4>
 					<hr width="10%" style="margin-top: 50px; margin-bottom: 50px;">
-					<h3 style="line-height: 1.4;">
+					<h3 class="serif-type" style="line-height: 1.4;">
 						Finance industry recruiting so easy a monkey could do it.
+            <br />
+            The best source for headhunter profiles to help find your next job.
 					</h3>
-					<h3 style="line-height: 1.4; margin-top: -5px;">
-						The best source for headhunter profiles to help find your next job.
-				</h3>
-				<p><small><i><%= link_to "Learn more", "#intro", :style => "color: #fff;" %></i></small></p>
-         <%= link_to "#intro", :style => "color: #fff;" do %>
+				  <p><small><i><%= link_to "Learn more", "#intro", :style => "color: #fff;" %></i></small></p>
+          <%= link_to "#intro", :style => "color: #fff;" do %>
             <span class="fa fa-hand-o-down" style="font-size: 2em;"></span>
           <% end %>
 				</div>
