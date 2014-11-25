@@ -13,12 +13,12 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "HEADHUNTERS", headhunters_path %></li>
+      <ul class="nav navbar-nav" style="font-weight: 300;">
         <li class="disabled"><%= link_to "BANKS", "#" %></li>
+        <li><%= link_to "HEADHUNTERS", headhunters_path %></li>
         <li><%= link_to "RESOURCES", resources_path %></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" style="font-weight: 300;">
         <% if user_signed_in? %>
           <li><%= link_to "SETTINGS", edit_user_registration_path %></li>
           <li><%= link_to "LOG OUT", destroy_user_session_path, method: :delete %></li>

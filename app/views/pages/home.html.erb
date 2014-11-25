@@ -12,9 +12,9 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right navbar-nav-front" style="font-weight: bold;">
-        <li><%= link_to "HEADHUNTERS", headhunters_path %></li>
+      <ul class="nav navbar-nav navbar-right navbar-nav-front" style="font-weight: 300;">
         <li class="disabled"><%= link_to "BANKS", "#" %></li>
+        <li><%= link_to "HEADHUNTERS", headhunters_path %></li>
         <li><%= link_to "RESOURCES", resources_path %></li>
         <% if user_signed_in? %>
           <li><%= link_to "SETTINGS", edit_user_registration_path %></li>
@@ -48,6 +48,38 @@
 		</div>
 	</div>
 </div>
-<div class="container" id="intro">
-
+<div style="background-color: #fff; background-width: 100%; margin-top: -72px;">
+  <div class="container" id="intro">
+    <div class="row center" style="margin-top: 72px; margin-bottom: 30px;">
+      <div class="col-md-4">
+        <span class="fa fa-bar-chart fa-2x fa-fw intro_side_icon"></span>
+        <span class="fa fa-bank fa-5x fa-fw intro_main_icon"></span>
+        <span class="fa fa-pie-chart fa-2x fa-fw intro_side_icon"></span>
+        <h3>Bank Profiles</h3>
+        <p class="serif-type">
+          To Come
+        </p>
+      </div>
+      <div class="col-md-4">
+        <div class="intro_column">
+          <span class="fa fa-envelope fa-2x fa-fw intro_side_icon"></span>
+          <span class="fa fa-binoculars fa-5x fa-fw intro_main_icon"></span>
+          <span class="fa fa-crosshairs fa-2x fa-fw intro_side_icon"></span>
+          <h3>Headhunter Profiles</h3>
+          <p class="serif-type">
+            Find the best recruiter to help you get your next job
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <span class="fa fa-newspaper-o fa-2x fa-fw intro_side_icon"></span>
+        <span class="fa fa-database fa-5x fa-fw intro_main_icon"></span>
+        <span class="fa fa-lightbulb-o fa-2x fa-fw intro_side_icon"></span>
+        <h3>Resources</h3>
+        <p class="serif-type">
+          To Come
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

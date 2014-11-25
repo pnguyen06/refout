@@ -45,7 +45,18 @@
   }
 }
 
-
+.intro_main_icon {
+	color: #71c6c1;
+}
+.intro_side_icon {
+	color: #ecf0f1;
+}
+.intro_column {
+	border-width: 1px;
+	border-color: #ecf0f1;
+	border-left-style: solid;
+	border-right-style: solid;
+}
 
 .tips_jumbo {
 	background: url('resources/analyst_tips_banner.jpg') center;
