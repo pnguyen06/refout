@@ -62,14 +62,19 @@
 	height: 400px;
   color: #fff;
   text-align: center;
-  //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
   margin-top: -20px;
 }
-
 .tips_upvote {
 	text-align: center;
 }
-
 .tips_upvote a:hover {
 	text-decoration: none;
+}
+
+.what_to_read_jumbo {
+	background: url('resources/what_to_read_banner.jpg') center;
+	height: 400px;
+  color: #fff;
+  text-align: center;
+  margin-top: -20px;
 }

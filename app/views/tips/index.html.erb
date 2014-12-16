@@ -10,42 +10,42 @@
     <small>The Ref Out Team</small>
   </div>
 </div>
-  <div class="container">
-    <% if current_user.try(:admin?) %>
-        <%= link_to new_tip_path do %>
-          <span class="fa fa-plus-circle"></span>
-          New Tip
+<div class="container">
+  <% if current_user.try(:admin?) %>
+    <%= link_to new_tip_path do %>
+      <span class="fa fa-plus-circle"></span>
+      New Tip
+    <% end %>
+  <% end %>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      Have a good tip to share? <a href="mailto:hello@refout.com">Let us know.</a>
+      <table class="table table-striped table-condensed" style="margin-top: 30px;">
+        <% @tips.each do |tip| %>
+          <tr>
+            <td class="tips_upvote">
+              <h4>
+                <%= link_to addupvote_tip_path(tip), method: :put do %>
+                  <span class="fa fa-chevron-circle-up"></span>
+                  <br />
+                  <%= tip.upvote %>
+                <% end %>
+              </h4>
+            </td>
+            <td>
+              <h4>
+                <b><%= tip.title.upcase %></b>
+                <% if current_user.try(:admin?) %>
+                  <%= link_to edit_tip_path(tip) do %>
+                    <span class="fa fa-edit"></span>
+                  <% end %>
+                <% end %>
+              </h4>
+              <p style="margin-top: -10px;"><small><%= tip.description %></small></p>
+            </td>
+          </tr>
         <% end %>
-      <% end %>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        Have a good tip to share? <a href="mailto:hello@refout.com">Let us know.</a>
-        <table class="table table-striped table-condensed" style="margin-top: 30px;">
-          <% @tips.each do |tip| %>
-            <tr>
-              <td class="tips_upvote">
-                <h4>
-                  <%= link_to addupvote_tip_path(tip), method: :put do %>
-                    <span class="fa fa-chevron-circle-up"></span>
-                    <br />
-                    <%= tip.upvote %>
-                  <% end %>
-                </h4>
-              </td>
-              <td>
-                <h4>
-                  <b><%= tip.title.upcase %></b>
-                  <% if current_user.try(:admin?) %>
-                    <%= link_to edit_tip_path(tip) do %>
-                      <span class="fa fa-edit"></span>
-                    <% end %>
-                  <% end %>
-                </h4>
-                <p style="margin-top: -10px;"><small><%= tip.description %></small></p>
-              </td>
-            </tr>
-          <% end %>
-        </table>
-      </div>
+      </table>
     </div>
   </div>
+</div>

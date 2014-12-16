@@ -21,6 +21,7 @@ Refout::Application.routes.draw do
 
   scope '/resources' do
     resources :tips
+    get "what-to-read" => "pages#resources/what-to-read"
   end
 
 
@@ -30,6 +31,7 @@ Refout::Application.routes.draw do
   get "contact" => "pages#contact"
   get "resources" => "pages#resources"
   get "legal" => "pages#legal"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
